@@ -48,13 +48,12 @@
 | 유저 모듈 | 어드민이 승인한 계정 로그인 승인                     | Login |
 | 유저 모듈 | 계정 정보 수정 반영                                          | Users의 데이터는 어디에 저장?? |
 | 유저 모듈 | 권한 확인        | 위에서의 권한 필요한 UC들 |
-| 데이터 모듈 | 상품 데이터를 저장한다.                         | DataManagement, AddProduct |
-| 데이터 모듈 | 재고 데이터를 저장한다.                         | CheckStock, ManageStocks, ViewStocks|
-| 데이터 모듈 | 창고와 연결된 소매점 데이터를 저장한다.                       | ViewBranches   |
-| 데이터 모듈 | 트랜잭션 데이터를 저장한다.                         | ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions |
-| 데이터 모듈 | 사용자에 대해 입력된 정보를 저장한다.                       | AcceptUsers, Register, Login   |
-| 데이터 모듈 | 사용자에 대해 수정된 정보를 저장한다.                       | ModifyProfile   |
-| 데이터 모듈 | 리퀘스트 관련 정보를 저장한다.                        | Request   |
+| 데이터 모듈 | 상품 데이터를 저장한다.                         | ProductData(DataManagement, AddProduct) |
+| 데이터 모듈 | 재고 데이터를 저장한다.                         | StockData(CheckStock, ManageStocks, ViewStocks)|
+| 데이터 모듈 | 창고와 연결된 소매점 데이터를 저장한다.                       | BranchData(ViewBranches)   |
+| 데이터 모듈 | 트랜잭션 데이터를 저장한다.                         | TransactionData(ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions) |
+| 데이터 모듈 | 사용자에 대해 입력된 정보를 저장한다.                       | UserData(AcceptUsers, Register, Login, ModifyProfile)   |
+| 데이터 모듈 | 리퀘스트 관련 정보를 저장한다.                        | RequestData(Request)   |
 | 분석모듈 | 해당 점주의 주위 지역의 판매 동향 그래프화, 수치화          |               |
 | 분석모듈 | 분기당 해당 브랜드 물품의 판매량 수치화                     |               |
 | 분석모듈 | 데이터 모듈을 통해 예측리포트 수치화하여 사용자에게 제공     |               |
