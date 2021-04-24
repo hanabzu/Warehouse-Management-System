@@ -6,22 +6,23 @@
 | 어드민 | 로그아웃 버튼을 눌러 로그아웃 | Logout |
 | 어드민 | 가입 수락기능 |AdministerUsers|
 | 어드민 | 모든 트랜잭션 내역을 확인             | ViewAllTransactions |
-| 어드민 | 상품이 부족할 시 대체할 수 있게 창고를 확인 할 수 있다.     |   AdministerProduct   | <-이해 어려움. 창고/지점에 상품이 부족? 자동 발주 기능을 위한 것인가요?
-| 어드민 | 해당 창고의 제품 수량을 실시간으로 확인 할 수 있다.       | AdministerProduct | REQ 어드민 파트 먼저 수정 보완 필요 (가입수락기능 등) |
-| 어드민 | 리포트를 통해 물품에 대한 구매량을 확인 할 수 있다        | ViewTransactionReports       |<- 어떤 물품 구매량인지 모르겠어요. 창고에 입고하는 걸 말하는 건가요?
+| 어드민 | 상품이 부족할 시 대체할 수 있게 창고를 확인 할 수 있다.     |   AdministerProduct   |
+| 어드민 | 해당 창고의 제품 수량을 실시간으로 확인 할 수 있다.       | AdministerProduct |
+| 어드민 | 리포트를 통해 물품에 대한 구매량을 확인 할 수 있다        | ViewTransactionReports       |
 | 창고 관리자 | 어플리케이션에 계정 생성 신청                           | Register |
 | 창고 관리자 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login |
 | 창고 관리자 | 로그아웃 버튼을 눌러 로그아웃               | Logout |
-| 창고 관리자 | 계정정보 수정                                           | ModifyProfile |
+| 창고 관리자 | 계정정보 수정                                          | ModifyProfile |
 | 창고 관리자 | 창고에 상품을 등록                               | AddProduct |
 | 창고 관리자 | 창고의 재고를 변경                                      | ManageStocks |
-| 창고 관리자 | 창고의 물품들의 재고를 열람                             | ViewStocks |
+| 창고 관리자 | 창고의 상품들의 재고를 열람                        | ViewStocks |
 | 창고 관리자 | 지점에게서 받은 발주를 자동으로 결재                           | ConfirmTransaction |
-| 창고 관리자 | 필요한 물품을 자동으로 발주                            | Order, +(트랜잭션UC)|
+| 창고 관리자 | 필요한 상품을 자동으로 발주                          | Order, +(트랜잭션UC)|
+| 창고 관리자 | 자동 발주 날짜 이전에 발주할 목록 확인 후 수정 | Order |
 | 창고 관리자 | 창고가 보낸 발주 내역 열람                                   | ViewTransactions |
 | 창고 관리자 | 근처 창고의 현재 재고 상황 확인                         | ViewStocks |
 | 창고 관리자 | 근처 창고의 차후 재고 예측 리포트 확인                  | ViewPredictionReports |
-| 창고 관리자 | 창고의 재고 예측 리포트 확인                            | ViewPredictionReports | 
+| 창고 관리자 | 창고의 재고 예측 리포트 확인                            | ViewPredictionReports |
 | 창고 관리자 | 창고의 과년도 동일 분기(계절)의 입출고 동향 리포트 확인 | ViewTransactionReports |
 | 창고 관리자 | 연결된 소매점 열람                              | ViewBranches |
 | 창고 관리자 | 어드민에게 리퀘스트                                     | Request |
