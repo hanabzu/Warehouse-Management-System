@@ -2,14 +2,11 @@
 
 | Actor | Actor's Goal                                                          | Use case name (넘버링은 완성 후에) |
 | ------------| ----------------------------------------------------------------- | ----------  |
-| 어드민 | 상품 데이터를 추가/삭제/수정한다. | DataManagement |
-| 어드민 | 창고들의 상품 재고를 확인할 수 있다 | CheckStock |
-| 어드민 | 각 상품에 대한 거래량을 리포트를 통해 확인 할 수 있다 |	ViewTransactionAmount|
-| 어드민 | 창고관리자, 점주 계정의 회원 가입 승인을 할 수 있게 한다. |AcceptUsers|
-| 어드민 | 모든 트랜잭션 내역을 확인  한다.          | ViewAllTransactions |
-| 어드민 | 상품이 부족할 시 대체할 수 있게 창고를 확인 할 수 있다.     |   AdministerProduct   | 
-| 어드민 | 해당 창고의 제품 수량을 실시간으로 확인 할 수 있다.       | AdministerProduct | 
-| 어드민 | 리포트를 통해 물품에 대한 구매량을 확인 할 수 있다        | ViewTransactionReports      |
+| 어드민 | 상품 데이터 추가/삭제/수정. | DataManagement |
+| 어드민 | 창고들의 상품 재고 확인 | CheckStock |
+| 어드민 | 리포트를 통한 각 상품에 대한 거래량 확인|	ViewTransactionAmount|
+| 어드민 | 창고관리자, 점주 계정 회원 가입 승인 |AcceptUsers|
+| 어드민 | 모든 트랜잭션 내역 확인   | ViewAllTransactions |
 | 창고 관리자 | 어플리케이션에 계정 생성 신청                           | Register |
 | 창고 관리자 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login |
 | 창고 관리자 | 로그아웃 버튼을 눌러 로그아웃               | Logout |
@@ -48,19 +45,17 @@
 | 유저 모듈 | 어드민이 승인한 계정 로그인 승인                     | Login |
 | 유저 모듈 | 계정 정보 수정 반영                                          | Users의 데이터는 어디에 저장?? |
 | 유저 모듈 | 권한 확인        | 위에서의 권한 필요한 UC들 |
-| 데이터 모듈 | 상품 데이터를 저장한다.                         | ProductData(DataManagement, AddProduct) |
-| 데이터 모듈 | 재고 데이터를 저장한다.                         | StockData(CheckStock, ManageStocks, ViewStocks)|
-| 데이터 모듈 | 창고와 연결된 소매점 데이터를 저장한다.                       | BranchData(ViewBranches)   |
-| 데이터 모듈 | 트랜잭션 데이터를 저장한다.                         | TransactionData(ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions) |
-| 데이터 모듈 | 사용자에 대해 입력된 정보를 저장한다.                       | UserData(AcceptUsers, Register, Login, ModifyProfile)   |
-| 데이터 모듈 | 리퀘스트 관련 정보를 저장한다.                        | RequestData(Request)   |
-| 분석모듈 | 해당 점주의 주위 지역의 판매 동향 그래프화, 수치화          |               |
-| 분석모듈 | 분기당 해당 브랜드 물품의 판매량 수치화                     |               |
-| 분석모듈 | 데이터 모듈을 통해 예측리포트 수치화하여 사용자에게 제공     |               |
-| 분석모듈 | 데이터 모듈을 통해 과년도 판매 동향을 제공                  |               |
-| 분석모듈 | 데이터 모듈을 통해 현재 판매 동향을 제공                   |               |
-| 분석모듈 | 창고의 동향리포트를 통해 현재 재고 리포트 수치화            |               |
-| 분석모듈 | 창고의 동향리포트를 통해 재고 예측 리포트 수치화            |               |
-| 분석모듈 | 과년도와 비교하여 제품의 재고 현황 예측 리포트 수치화        |                 |
+| 데이터 모듈 | 상품 데이터 저장.                         | ProductData(DataManagement, AddProduct) |
+| 데이터 모듈 | 재고 데이터 저장.                         | StockData(CheckStock, ManageStocks, ViewStocks)|
+| 데이터 모듈 | 창고와 연결된 소매점 데이터 저장.                       | BranchData(ViewBranches)   |
+| 데이터 모듈 | 트랜잭션 데이터를 저장.                         | TransactionData(ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions) |
+| 데이터 모듈 | 사용자에 대해 입력된 정보 저장.                       | UserData(AcceptUsers, Register, Login, ModifyProfile)   |
+| 데이터 모듈 | 리퀘스트 관련 정보 저장.                        | RequestData(Request)   |
+| 분석모듈 | 트랜잭션 내역을 날짜, 창고, 지점별로 수치화	| AnalysisTransaction |
+| 분석모듈 | 지점별 판매 내역을 통해 판매량 데이터를 기간별로 그래프화 |	AnalysisData |
+| 분석모듈 | 재고 상황을 확인할 때 거래량순, 브랜드별, 상품 유형별 그래프화 |	AnalysisStock |
+| 분석모듈 |	판매 동향 리포트를 수치화 |	AnalysisTrend |
+| 분석모듈 |	판매 예측 리포트를 수치화 |	AnalysisPrediction |
+| 분석모듈 |	자동 발주 내역을 수치화	 | AnalysisAuto |
 
 
