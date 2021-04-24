@@ -28,27 +28,21 @@ Any of: 어드민 , 창고관리자
 ## Flow of Events for Main Success Scenario
 | Direction | n | Actor Action                                                                                                         |
 | --------- | - | -------------------------------------------------------------------------------------------------------------------- |
-| ←         | 1 | System shows 'login' page with radio button and input fields for selecting User's type and entering ID and password. |
-| →         | 2 | User selects whether he/she is Manager or Guest. |
-| →         | 3 | User inputs valid ID and password in the blank. |
-| →         | 4 | User clicks the 'Login’ button. |
-| ←         | 5 | System prepares a database query that perfectly matches the actor's ID and retrieves the record from the Database. |
-| →         | 6 | Database returns the matching record. |
-| ←         | 7 | System checks that the ID and password entered by the actor are valid. |
-| ←         | 8 | System passes the log to Database. |
-| →         | 9 | Database records the log as successful login. |
-| ←         | 10 | System redirects User to the ‘Add Book’ page if he/she is valid Manager or to the ‘Search Book’ page if he/she is valid Guest. |
+| ←         | 1 | 상품에 대한 정보를 추가, 수정, 삭제 할지 고르는 화면이 나온다. |
+| →         | 2 | 어드민/창고관리자는 원하는 행동을 선택한다. |
+| →         | 3 | 추가(a), 수정, 삭제(b) 할 상품에 대한 정보를 입력칸에 입력한다.|
+| →         | 4 | 저장버튼을 누른다. |
+| ←         | 5 | 데이터베이스에 변경된 정보가 저장되고 저장됐음을 알리는 화면을 출력한다. |
 
 
 ## Flow of Events for Extensions (Alternate Scenarios)
-3a. User inputs invalid ID and password in the blank.
+3a. 추가 할 상품에 대한 정보를 입력칸에 입력한다.
 | Direction | n | Actor Action                                                                                                         |
 | --------- | - | -------------------------------------------------------------------------------------------------------------------- |
-| →         | 1 | User clicks the 'Login’ button. |
-| ←         | 2 | System prepares a database query that perfectly matches the actor's ID and retrieves the record from the Database. |
-| →         | 3 | Database returns the matching record. |
-| ←         | 4 | System checks that the ID and password entered by the actor are invalid. |
-| ←         | 5 | System (a) detects error, (b) passes the log to the database, and (c) shows a login fail message. |
-| →         | 6 | Database (a) records the log as failed login and (b) returns the login fail count to System. |
-| ←         | 6a | System (a) detects that the count of failed attempts exceeds the maximum allowed number, (b) signals to the actor, and (c) blocks the login action for 10 minutes. |
-| →         | 7 | Same as in Step 3 above. |
+| ←         | 1 | 제품명,브랜드,수량에 대한 데이터가 입력되지 않은채 저장을 누르면 에러메세지를 출력한다. |
+
+3b. 수정, 삭제 할 상품에 대한 정보를 입력칸에 입력한다.
+| Direction | n | Actor Action                                                                                                         |
+| --------- | - | -------------------------------------------------------------------------------------------------------------------- |
+| →         | 1 | 사용자는 입력칸에 수정, 삭제할 데이터를 입력한다. |
+| ←         | 2 | 데이터베이스상에 입력한 데이터가 존재하지 않을 경우 에러메세지를 출력한다. |
