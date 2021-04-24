@@ -17,15 +17,15 @@
 | 창고 관리자 | 로그아웃 버튼을 눌러 로그아웃               | Logout |
 | 창고 관리자 | 계정정보 수정                                           | ModifyProfile |
 | 창고 관리자 | 창고에 상품을 등록                               | AddProduct |
-| 창고 관리자 | 창고에 브랜드를 등록                               | AddBrand |  <- 상품 등록시 브랜드의 정보가 들어가면 브랜드 등록이 따로 필요한가? 에 대해 생각 필요
 | 창고 관리자 | 창고의 재고를 변경                                      | ManageStocks |
 | 창고 관리자 | 창고의 물품들의 재고를 열람                             | ViewStocks |
-| 창고 관리자 | 창고의 발주 내역 열람                                   | ViewTransactions | <-창고의 발주 내역이 점주가 신청한 발주인가요?
+| 창고 관리자 | 지점에게서 받은 발주를 자동으로 결재                           | ConfirmTransaction |
+| 창고 관리자 | 필요한 물품을 자동으로 발주                            | Order, +(트랜잭션UC)|
+| 창고 관리자 | 창고가 보낸 발주 내역 열람                                   | ViewTransactions |
 | 창고 관리자 | 근처 창고의 현재 재고 상황 확인                         | ViewStocks |
 | 창고 관리자 | 근처 창고의 차후 재고 예측 리포트 확인                  | ViewPredictionReports |
 | 창고 관리자 | 창고의 재고 예측 리포트 확인                            | ViewPredictionReports | 
 | 창고 관리자 | 창고의 과년도 동일 분기(계절)의 입출고 동향 리포트 확인 | ViewTransactionReports |
-| 창고 관리자 | 연결된 브랜드 열람                               | ViewBrands | <- 연결된 브랜드가 무얼 의미하는 건가요? 어드민과 연결되어 상품 입고가 가능한 브랜드?
 | 창고 관리자 | 연결된 소매점 열람                              | ViewBranches |
 | 창고 관리자 | 어드민에게 리퀘스트                                     | Request |
 | 점주 | 어플리케이션에 계정 생성 신청 | Register |
