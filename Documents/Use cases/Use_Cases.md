@@ -48,15 +48,13 @@
 | 유저 모듈 | 어드민이 승인한 계정 로그인 승인                     | Login |
 | 유저 모듈 | 계정 정보 수정 반영                                          | Users의 데이터는 어디에 저장?? |
 | 유저 모듈 | 권한 확인        | 위에서의 권한 필요한 UC들 |
-| 데이터 모듈 | 제품에 대한 입력된 정보를 저장한다.                         | ManageProduct(input) |
-| 데이터 모듈 | 제품에 대한 수정된 정보를 저장한다.                         | ManageProduct(modify) |
-| 데이터 모듈 | 사용자에 대해 입력된 정보를 저장한다.                       | ManageUser(input)    |
-| 데이터 모듈 | 사용자에 대해 수정된 정보를 저장한다.                       | ManageUser(modify)   |
-| 데이터 모듈 | 날짜별로 판매된 제품의 수량을 저장한다.                    | Generalizations |
-| 데이터 모듈 | 제품의 수량이 변경될 때마다 실시간으로 기록한다.             | UpdateStock     |
-| 데이터 모듈 | 트렌젝션 데이터를 보여준다.                                | ShowTransactions  |
-| 데이터 모듈 | 창고에 남아있는 재고데이터를 보여준다.                      | ShowStock(ViewStock과 통함?)   |
-| 데이터 모듈 | 창고에 보관중인 물품에 대한 데이터를 보여준다.               | ShowProduct   |
+| 데이터 모듈 | 상품 데이터를 저장한다.                         | DataManagement, AddProduct |
+| 데이터 모듈 | 재고 데이터를 저장한다.                         | CheckStock, ManageStocks, ViewStocks|
+| 데이터 모듈 | 창고와 연결된 소매점 데이터를 저장한다.                       | ViewBranches   |
+| 데이터 모듈 | 트랜잭션 데이터를 저장한다.                         | ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions |
+| 데이터 모듈 | 사용자에 대해 입력된 정보를 저장한다.                       | AcceptUsers, Register, Login   |
+| 데이터 모듈 | 사용자에 대해 수정된 정보를 저장한다.                       | ModifyProfile   |
+| 데이터 모듈 | 리퀘스트 관련 정보를 저장한다.                        | Request   |
 | 데이터 모듈 | 어드민,점주,창고관리자가 열람 가능                          | 권한 확인인듯합니다  |
 | 분석모듈 | 해당 점주의 주위 지역의 판매 동향 그래프화, 수치화          |               |
 | 분석모듈 | 분기당 해당 브랜드 물품의 판매량 수치화                     |               |
