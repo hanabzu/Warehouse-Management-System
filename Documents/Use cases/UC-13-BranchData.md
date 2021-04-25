@@ -5,7 +5,7 @@
 
 **3) Actor's Goal** : 창고와 연결된 소매점 데이터 저장.
 
-**4) Participating Actors** : 
+**4) Participating Actors** : 데이터 모듈
 
 **5) Preconditions** : 시스템에 창고와 연결된 매장의 정보가 저장되어 있어야한다.
 
