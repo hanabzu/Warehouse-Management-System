@@ -1,4 +1,4 @@
-# Use Case: ViewReport
+# Use Case - 20: ViewReport
 
 ## **Related Requirements**
 REQ-4, REQ-27, REQ-29, REQ-30
@@ -30,10 +30,3 @@ Any of: 어드민 , 창고관리자, 점주
 | ←         | 3 | 시스템은 판매량 데이터를 기반으로 동향 리포트를 생성해서 화면에 출력한다. |
 | ←         | 4 |   |
 
-
-## Flow of Events for Extensions (Alternate Scenarios)
-2a.  
-| Direction | n | Actor Action                                                                                                         |
-| --------- | - | -------------------------------------------------------------------------------------------------------------------- |
-| ←         | 1 |   |
-| ←         | 2 |   |
