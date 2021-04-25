@@ -30,6 +30,6 @@
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
-| Processed Complaints | 승인/거부 컴플레인 데이터 | 창고관리자가 승언/거부한 컴플레인 |
-| Requested Complaints | 요청/컴플레인 데이터 | 점주가 신청한 요청/컴플레인 |
+| Processed Complaints | 승인/거부 컴플레인 데이터 | 창고관리자가 승언/거부한 컴플레인 ID |
+| Requested Complaints | 요청/컴플레인 데이터 | 점주가 신청한 요청/컴플레인 ID |
 | Interface Page | 변동된 컴플레인 데이터 | 창고관리자/점주가 수정한 컴플레인 |
