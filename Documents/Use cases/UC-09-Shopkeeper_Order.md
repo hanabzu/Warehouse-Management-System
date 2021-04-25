@@ -1,34 +1,21 @@
-# Use Case UC-09: ShopkeeperOrder
+## Use Case UC-09: ShopkeeperOrder
+**1) Related Requirements** : REQ-17, REQ-20
 
-## **Related Requirements**
+**2) Initiating Actors** : Any of: 점주, 창고 관리자
 
-REQ-17, REQ-20
+**3) Actor's Goal** : 점주가 필요한 상품들을 연결된 창고에 발주를 신청하고, 신청한 목록이 창고 관리자 계정으로 전송되어 (창고 재고에 맞추어 자동으로 확인하고 결재한다. / 창고 관리자가 확인하고 결재한다. )
 
+**4) Participating Actors** : 
 
-## **Initiating Actors**
+**5) Preconditions** : 창고 관리자 계정은 '자동 결재'기능이 켜져 있어야 자동 결재 기능이 실행된다.
 
-Any of: 점주, 창고 관리자
+​								  발주를 신청받은 창고에 신청한 양 만큼의 재고가 있어야 한다.
 
-## **Actor's Goal**
+**6) Postconditions** :  (발주가 정상적으로 처리가 되면) 점주 계정에서 발주한 만큼의 돈이 결제가 된다.
 
-점주가 필요한 상품들을 연결된 창고에 발주를 신청하고, 신청한 목록이 창고 관리자 계정으로 전송되어 (창고 재고에 맞추어 자동으로 확인하고 결재한다. / 창고 관리자가 확인하고 결재한다. )
+(발주가 정상적으로 처리가 되면) 해당 창고 재고가 '발주'상태로 전환된다. (아예 재고에서 빠지는게 좋을까요?)
 
-## **Participating Actors**
-
- - 
-
-## **Preconditions**
-
-- 창고 관리자 계정은 '자동 결재'기능이 켜져 있어야 자동 결재 기능이 실행된다.
-- 발주를 신청받은 창고에 신청한 양 만큼의 재고가 있어야 한다.
-
-
-## **Postconditions**
-
-- (발주가 정상적으로 처리가 되면) 점주 계정에서 발주한 만큼의 돈이 결제가 된다.
-- (발주가 정상적으로 처리가 되면) 해당 창고 재고가 '발주'상태로 전환된다. (아예 재고에서 빠지는게 좋을까요?)
-
-## Flow of Events for Main Success Scenario
+**7) Flow of Events for Main Success Scenario**
 
 | Direction | n    | Actor Action                                                 |
 | --------- | ---- | ------------------------------------------------------------ |
@@ -40,7 +27,7 @@ Any of: 점주, 창고 관리자
 | ←         | 6    | 시스템은 창고 관리자 계정에서 발주된 상품들을 '발주' 상태로 전환한다. |
 | ←         | 7    | 시스템은 점주 계정에서 발주 비용만큼 돈을 차감한다.          |
 
-## Flow of Events for Extensions (Alternate Scenarios)
+**8) Flow of Events for Extensions (Alternate Scenarios)**
 
 5a. '자동 결재'기능이 꺼져 있을 시.
 
@@ -55,6 +42,3 @@ Any of: 점주, 창고 관리자
 | Direction | n    | Actor Action                                                 |
 | --------- | ---- | ------------------------------------------------------------ |
 | ←         | 1    | 시스템은 발주를 신청한 점주 계정에게 '발주 실패'를 전송한다. |
-
-
-

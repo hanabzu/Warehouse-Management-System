@@ -1,37 +1,24 @@
-# Use Case UC-11: Request
+## Use Case UC-11: Request
+**1) Related Requirements** : REQ-9
 
-## **Related Requirements**
-REQ-9
+**2) Initiating Actors** : Any of: 어드민, 창고관리자, 점주
 
-## **Initiating Actors**
+**3) Actor's Goal** : 창고 관리자는 컴플레인을 어드민에게 리퀘스트하고, 점주는 창고 관리자에게 요청 또는 컴플레인을 신청한다.
 
-Any of: 창고 관리자, 점주
+**4) Participating Actors** : 데이터 모듈
 
-## **Actor's Goal**
+**5) Preconditions** : 창고 관리자가 컴플레인을 처리할 때는 데이터 모듈에 리퀘스트 정보가 저장되어 있어야 한다.
 
-창고 관리자는 컴플레인을 어드민에게 리퀘스트하고,
+**6) Postconditions** :  어드민에게 리퀘스트된, 삭제된, 추가된 컴플레인 목록이 출력된다.
 
-점주는 창고 관리자에게 요청 또는 컴플레인을 신청한다.
-
-## **Participating Actors**
-
-- 데이터 모듈
-
-## **Preconditions**
-
-- 창고 관리자가 컴플레인을 처리할 때는 데이터 모듈에 리퀘스트 정보가 저장되어 있어야 한다.
-
-## **Postconditions**
-
-- 어드민에게 리퀘스트된, 삭제된, 추가된 컴플레인 목록이 출력된다.
-
-## Flow of Events for Main Success Scenario
+**7) Flow of Events for Main Success Scenario**
 | Direction | n    | Actor Action                           |
 | --------- | ---- | -------------------------------------- |
 | →         | 1    | 사용자(a)(b)는 컴플레인 탭을 선택한다. |
 | ←         | 2    | 처리된 컴플레인 목록을 출력한다.       |
 
-## Flow of Events for Extensions (Alternate Scenarios)
+
+**8) Flow of Events for Extensions (Alternate Scenarios)**
 
 1a. 사용자가 창고 관리자일 경우
 
@@ -41,8 +28,6 @@ Any of: 창고 관리자, 점주
 | →         | 2    | 창고 관리자는 컴플레인 목록 중 일부를 선택해 어드민에게 신청하거나(a) 삭제(b)한다. |
 | ←         | 2a   | 어드민에게 신청하면 해당 컴플레인을 어드민에게 리퀘스트하고 상태를 처리 중으로 바꾼다. |
 | ←         | 2b   | 요청 또는 컴플레인을 삭제하면 목록에서 제거한다.             |
-
-
 
 1b. 사용자가 점주일 경우
 

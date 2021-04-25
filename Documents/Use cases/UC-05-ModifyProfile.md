@@ -1,30 +1,17 @@
-# Use Case UC-05: ModifyProfile
+## Use Case UC-05: ModifyProfile
+**1) Related Requirements** : REQ-3, REQ-8, REQ-31
 
-## **Related Requirements**
+**2) Initiating Actors** : Any of: 어드민 , 창고관리자, 점주
 
-REQ-3, REQ-8, REQ-31
+**3) Actor's Goal** : 계정 정보를 수정한다.
 
-## **Initiating Actors**
+**4) Participating Actors** : 유저 모듈
 
-Any of: 어드민 , 창고관리자, 점주
+**5) Preconditions** : 어플리케이션에 로그인된 상태이다.
 
-## **Actor's Goal**
+**6) Postconditions** :  계정 정보가 변경된다.
 
-계정 정보를 수정한다.
-
-## **Participating Actors**
-
- - 유저 모듈
-
-## **Preconditions**
-
-- 어플리케이션에 로그인된 상태이다.
-
-## **Postconditions**
-
-+ 계정 정보가 변경된다.
-
-## Flow of Events for Main Success Scenario
+**7) Flow of Events for Main Success Scenario**
 | Direction | n    | Actor Action                                                 |
 | --------- | ---- | ------------------------------------------------------------ |
 | →         | 1    | 유저가 계정정보 수정 버튼을 클릭한다.                        |
@@ -38,7 +25,9 @@ Any of: 어드민 , 창고관리자, 점주
 | →         | 9    | 유저 모듈이 유효한 계정 정보임을 시스템에게 알린다.          |
 | ←         | 10   | 시스템이 유저에게 계정 정보가 변경되었음을 알린다.           |
 
-## Flow of Events for Extensions (Alternate Scenarios)
+
+**8) Flow of Events for Extensions (Alternate Scenarios)**
+
 5a. 유저 모듈이 패스워드가 잘못되었음을 알렸을 경우
 
 | Direction | n    | Actor Action                                       |
