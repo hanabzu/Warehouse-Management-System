@@ -56,6 +56,6 @@
 | 분석모듈 | 재고 상황을 확인할 때 거래량순, 브랜드별, 상품 유형별 그래프화 |	AnalysisStock |
 | 분석모듈 |	판매 동향 리포트를 수치화 |	AnalysisTrend |
 | 분석모듈 |	판매 예측 리포트를 수치화 |	AnalysisPrediction |
-| 분석모듈 |	자동 발주 내역을 수치화	 | AnalysisAuto |
+| 분석모듈 |	자동 발주될 상품들의 내역을 수치화	 | AnalysisAuto |
 
 
