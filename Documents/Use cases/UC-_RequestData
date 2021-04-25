@@ -22,7 +22,7 @@ Any of: 창고관리자, 점주
 
 ## **Postconditions**
 
-- 
+- 데이터베이스에 리퀘스트에 대한 정보가 저장된다.
 
 ## Flow of Events for Main Success Scenario
 | Direction | n | Actor Action                                                                                                         |
