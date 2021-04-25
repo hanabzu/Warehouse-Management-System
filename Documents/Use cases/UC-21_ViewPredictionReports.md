@@ -1,4 +1,4 @@
-# Use Case: ViewPredictionReports
+# Use Case UC-14: ViewPredictionReports
 
 ## **Related Requirements**
 
