@@ -5,7 +5,7 @@
 
 **3) Actor's Goal** : 트랜잭션 데이터를 저장한다.
 
-**4) Participating Actors** : 
+**4) Participating Actors** : 데이터 모듈
 
 **5) Preconditions** : 창고와 매장사이에 트랜잭션 내역이나 요청한 데이터가 존재하야한다. 
 
