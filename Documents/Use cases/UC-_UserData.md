@@ -1,4 +1,4 @@
-# Use Case: ProductData
+# Use Case: UserData
 
 ## **Related Requirements**
 
@@ -18,8 +18,8 @@ Any of: 어드민 , 창고관리자, 점주
 
 ## **Preconditions**
 
-- 
-- 
+- 어드민에게 가입요청 내역이 있어야한다.
+- ID,PWD가 데이터베이스에 저장되어 있어야한다.
 
 ## **Postconditions**
 
