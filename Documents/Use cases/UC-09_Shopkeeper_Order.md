@@ -1,8 +1,8 @@
-# Use Case UC-9: ShopkeeperOrder
+# Use Case UC-09: ShopkeeperOrder
 
 ## **Related Requirements**
 
-REQ-20 , REQ-17
+REQ-17, REQ-20
 
 
 ## **Initiating Actors**

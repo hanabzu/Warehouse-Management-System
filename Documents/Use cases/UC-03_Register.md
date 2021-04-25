@@ -1,4 +1,4 @@
-# Use Case UC-3: Register
+# Use Case UC-03: Register
 
 ## **Related Requirements**
 

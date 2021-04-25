@@ -1,8 +1,8 @@
-# Use Case: ViewBranches
+# Use Case UC-18: ViewBranches
 
 ## **Related Requirements**
 
-REQ-18, REQ-23
+REQ-23, REQ-24
 
 ## **Initiating Actors**
 
