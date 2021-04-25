@@ -1,4 +1,4 @@
-# Use Case: Order
+# Use Case: Shopkeeper_Order
 
 ## **Related Requirements**
 
@@ -37,8 +37,7 @@ Any of: 점주, 창고 관리자
 | ←         | 4 | 시스템은 창고 관리자 계정으로 발주목록을 전송한다.   |
 | ←         | 5 | 시스템은 창고 관리자 계정이 '자동 결재' 여부를 확인하고, 켜져 있을 시(a) 창고 재고 확인 후 결재한다.(b)   |
 | ←         | 6 | 시스템은 창고 관리자 계정에서 발주된 상품들을 '발주' 상태로 전환한다.   |
-| ←         | 7 | 시스템은 점주 계정에서 발주 비용만큼 돈을 차감한다.   
-|
+| ←         | 7 | 시스템은 점주 계정에서 발주 비용만큼 돈을 차감한다.   |
 ## Flow of Events for Extensions (Alternate Scenarios)
 5a. '자동 결재'기능이 꺼져 있을 시.
 | Direction | n | Actor Action                                                                                                         |
