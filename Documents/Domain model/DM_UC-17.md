@@ -1,4 +1,4 @@
-# Domain Model for UC-17: ViewStock
+# Domain Model for UC-17 : ViewStock
 
 ## Extracting the Responsibilities
 
