@@ -21,6 +21,7 @@
 | ------------------ | ----------------------- | ---------------- |
 | DatabaseConnection  <->   유저 모듈 |  유저 계정 정보가 변경되었음을 알린다.   | convey request |
 | Controller  <->  DatabaseConnection  |  유저 계정 정보 수정을 요청한다.  | convey request |
+| Controller  <->  유저 모듈  |  패스워드 재입력을 요청한다.  | convey request |
 
 **3) Extracting the Attributes**
 
