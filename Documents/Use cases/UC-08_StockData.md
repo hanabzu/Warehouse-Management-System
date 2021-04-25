@@ -1,4 +1,4 @@
-# Use Case UC-8: StockData
+# Use Case UC-08: StockData
 
 ## **Related Requirements**
 
