@@ -26,6 +26,6 @@
 | ------- | ---------- | --------------------- |
 | TransactionInfo  | Transaction pair  | 어디와 어디의 트랜잭션인지에 관한 정보. ( T1, T2 )     |
 |         | TransactionPeriod | 보고 싶은 트랜잭션의 기간                      |
-|         |            |                       |
+| DatabaseConnection  | 트랜잭션 데이터  |  사용자가 선택한 기간에 해당하는 트랜잭션 데이터    |
 |         |            |                       |
 |         |            |                       |
