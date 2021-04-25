@@ -1,4 +1,4 @@
-# Use Case: ViewBranches
+# Use Case UC-18: ViewBranches
 
 ## **Related Requirements**
 
