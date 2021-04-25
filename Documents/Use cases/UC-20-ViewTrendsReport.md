@@ -1,4 +1,4 @@
-## Use Case UC-20: ViewReport
+## Use Case UC-20: ViewTrendsReport
 **1) Related Requirements** : REQ-4, REQ-27, REQ-29, REQ-30
 
 **2) Initiating Actors** : Any of: 어드민 , 창고관리자, 점주
