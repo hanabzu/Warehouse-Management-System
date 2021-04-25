@@ -1,6 +1,6 @@
 # Domain Model for UC-19: ViewTransaction
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -11,7 +11,7 @@
 | 데이터베이스에서 해당하는 트랜잭션 데이터를 가져온다. | D | DatabaseConnection |
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -20,7 +20,7 @@
 | Controller <-> pageMaker | 가져온 트랜잭션 데이터를 바탕으로 출력할 페이지를 만들 것을 요구한다. | convey request |
 | PageMaker <-> TransactionPage | 만들어진 페이지를 전달한다. | provide data(page) |
 
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
