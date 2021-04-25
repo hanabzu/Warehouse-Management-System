@@ -5,7 +5,7 @@
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
 | 데이터 모듈로부터 전체 판매 내역 데이터를 가져와 예측 모델을 만들고, 점주가 판매 내역을 입력하면 그 데이터를 가지고 예측을 한다. |  D   | Controller      |
-| 판매량 예측 모델을 만들기 위해 수집된 데이터이다.                       |  K   | AllSalesdata   |
+| 판매량 예측 모델을 만들기 위해 수집된 데이터이다.                       |  K   | AllSalesData   |
 | 데이터를 활용해 판매량을 예측한다.                                                             |  D    |   AnalysisOperator             |
 | 데이터 베이스에 존재하는 판매 내역을 가져온다.                                 |  D    |   Database Connection          |
 | 판매량 예측값을 얻기 위해 점주가 입력한 판매 내역이다.                |  K   | SalesInputData| 
