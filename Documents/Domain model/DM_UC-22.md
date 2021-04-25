@@ -26,6 +26,6 @@
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
-|   AllSalesdata       |  전체 판매 내역 데이터          |   예측 모델을 만들기 위해 수집한                     |
+|   AllSalesData       |  전체 판매 내역 데이터          |   예측 모델을 만들기 위해 수집한                     |
 |  SalesInputData       |  해당 지점 판매 내역 데이터          | 점주가 예측을 위해 넣은 데이터                      |
 
