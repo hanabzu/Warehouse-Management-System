@@ -14,7 +14,7 @@
 ## Extracting the Associations
 
 | Concept pair | Association Description | Association Name |
-| --------- | ---- | --------- | ----------------------- | ---------------- |
+| ------------------ | ----------------------- | ---------------- |
 | Controller  <->   PageMaker | 컨트롤러가 페이지 메이커에게 사용자가 원하는 재고 데이터 페이지를 만들 것을 요청한다.      | convey request |
 | Controller  <->   DatabaseConnection  | 데이터베이스에서 사용자가 원하는 창고/지점의 재고 데이터를 가져올 것을 요청한다.   | convey request |
 | UserEntry  <->  Controller | 사용자가 선택한 창고/지점에 대한 값을 컨트롤러에 넘겨준다.       |   convey data  |
