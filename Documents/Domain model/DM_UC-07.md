@@ -1,6 +1,6 @@
 # Domain Model for UC-07 : ProductData 
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -11,7 +11,7 @@
 
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -20,8 +20,7 @@
 | Judging <-> Archiver | 판단이되면 Archiver에게 데이터를 저장여부를 전달한다.       |  convey request   |
 | DatabaseConnection  <->  Archiver  | 입력된 데이터를 데이터베이스에 저장한다.   | request save |
 
-
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
