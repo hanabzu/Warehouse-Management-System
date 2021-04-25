@@ -1,4 +1,4 @@
-# Use Case UC-6: AuthenticateUser
+# Use Case UC-06: AuthenticateUser
 
 ## **Related Requirements**
 
