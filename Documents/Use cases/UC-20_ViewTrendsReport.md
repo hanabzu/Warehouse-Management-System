@@ -1,4 +1,4 @@
-# Use Case - 20: ViewReport
+# Use Case UC-20: ViewReport
 
 ## **Related Requirements**
 REQ-4, REQ-27, REQ-29, REQ-30
