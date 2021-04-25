@@ -42,16 +42,15 @@
 | 점주 | 컴플레인 탭에서 상품/브랜드에 대한 컴플레인을 신청한다.              | Request |
 | 점주 | 현재 지점 탭에서 현재 지점의 재고를 업데이트한다. (상품 추가/수정/삭제)           | ManageStocks |
 | 점주 | 현재 지점 탭에서 판매 상품들에 대한 내역을 등록한다.      | sale dataManagement    |
-| 유저 모듈 | 점주, 창고 관리자 가입 정보 어드민에 전달                    | Register , 수락기능(위에서 선추가 필요) |
-| 유저 모듈 | 어드민이 승인한 계정 가입 후 데이터에 추가                     | Register |
-| 유저 모듈 | 어드민이 승인한 계정 로그인 승인                     | Login |
-| 유저 모듈 | 계정 정보 수정 반영                                          | Users의 데이터는 어디에 저장?? |
-| 유저 모듈 | 권한 확인        | 위에서의 권한 필요한 UC들 |
+| 유저 모듈 | 유효한 계정 확인 | Login, Register, AuthenticateUser, UserData                  |
+| 유저 모듈 | 임시 계정 저장          | Register                                                     |
+| 유저 모듈 | 새로운 계정 저장          | AcceptUsers, UserData |
+| 유저 모듈 | 계정 정보 수정                               | ModifyProfile, UserData |
 | 데이터 모듈 | 상품 데이터 저장.                         | ProductData(DataManagement, AddProduct) |
 | 데이터 모듈 | 재고 데이터 저장.                         | StockData(CheckStock, ManageStocks, ViewStocks)|
 | 데이터 모듈 | 창고와 연결된 소매점 데이터 저장.                       | BranchData(ViewBranches)   |
 | 데이터 모듈 | 트랜잭션 데이터를 저장.                         | TransactionData(ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions) |
-| 데이터 모듈 | 사용자에 대해 입력된 정보 저장.                       | UserData(AcceptUsers, Register, Login, ModifyProfile)   |
+| 데이터 모듈 | 사용자에 대해 입력된 정보 저장.                       | UserData(AcceptUsers, Register, Login, Logout ModifyProfile) |
 | 데이터 모듈 | 리퀘스트 관련 정보 저장.                        | RequestData(Request)   |
 | 분석모듈 | 트랜잭션 내역을 날짜, 창고, 지점별로 수치화	| AnalysisTransaction |
 | 분석모듈 | 지점별 판매 내역을 통해 판매량 데이터를 기간별로 그래프화 |	AnalysisData |
