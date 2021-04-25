@@ -1,4 +1,4 @@
-# Use Case: ProductData
+# Use Case: RequestData
 
 ## **Related Requirements**
 
@@ -10,7 +10,7 @@ Any of: 창고관리자, 점주
 
 ## **Actor's Goal**
 
-리퀘스트 관련 정보를 저장한다.
+컴플레인이나 요구 관련 정보를 저장한다.
 
 ## **Participating Actors**
 
