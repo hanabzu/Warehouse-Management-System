@@ -16,9 +16,10 @@
 
 | Concept pair | Association Description | Association Name |
 | --------- | ----------------------- | ---------------- |
-| Controller <-> Database Connection | 컨트롤러가 Database Connection에게 판메 예측 데이터를 가져올 것을 요청한다. | Convey Request |
-| Prediction Data <-> Prediction Report Maker | 판매 예측 데이터를 Prediction Report Maker에 넘겨준다. | Convey Data |
-| Prediction Report <-> Page Maker | 판매 예측 리포트를 Page Maker에 넘겨준다. | Convey Report |
+| Controller <-> Database Connection | 컨트롤러가 Database Connection에게 판매 예측 데이터를 가져올 것을 요청한다. | Convey Request |
+| Controller <-> Page Maker | 컨트롤러가 Page Maker에게 판매 예측 리포트 페이지를 만들 것을 요청한다. | Convey Request |
+| Database Connection <-> Prediction Report Maker | 판매 예측 데이터를 Prediction Report Maker에 넘겨준다. | Convey Data |
+| Prediction Report Maker <-> Page Maker | 판매 예측 리포트를 Page Maker에 넘겨준다. | Convey Report |
 | Page Maker <-> Interface Page | 사용자에게 보여줄 페이지를 준비한다. | Prepare |
 
 **3) Extracting the Attributes**
