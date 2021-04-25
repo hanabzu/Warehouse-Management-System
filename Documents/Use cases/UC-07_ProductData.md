@@ -1,4 +1,4 @@
-# Use Case UC-7: ProductData
+# Use Case UC-07: ProductData
 
 ## **Related Requirements**
 
