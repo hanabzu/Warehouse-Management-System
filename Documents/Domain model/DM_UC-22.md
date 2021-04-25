@@ -1,6 +1,6 @@
 # Domain Model for UC-22: WriteAIReport
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -11,7 +11,7 @@
 | 판매량 예측값을 얻기 위해 점주가 입력한 판매 내역이다.                |  K   | 점주가 입력한 판매 내역 데이터 
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -23,8 +23,7 @@
 |           |      |           |                         |                  |
 
 
-
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
