@@ -1,6 +1,6 @@
 # Domain Model for UC-10: StorekeeperOrder
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -12,7 +12,7 @@
 | 창고 관리자의 발주 목록 수정을 반영한다.  | D | OrderEditer |
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -22,7 +22,7 @@
 |  |  |        |
 |   |    |      |  
 
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
