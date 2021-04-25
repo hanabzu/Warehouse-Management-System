@@ -22,7 +22,7 @@ Any of: 어드민 , 창고관리자, 점주
 
 ## **Postconditions**
 
-- 
+- 데이터베이스에 트랜잭션에 대한 데이터가 저장된다.
 
 ## Flow of Events for Main Success Scenario
 | Direction | n | Actor Action                                                                                                         |
