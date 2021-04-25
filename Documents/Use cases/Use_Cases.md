@@ -6,7 +6,7 @@
 | 어드민 | 로그아웃 버튼을 눌러 로그아웃               | Logout (UC-2) |
 | 어드민 | 상품 데이터 추가/삭제/수정. | ProductData (UC-7) |
 | 어드민 | 창고들의 상품 재고 확인 | ViewStock |
-| 어드민 | 리포트를 통한 각 상품에 대한 거래량 확인| ViewTransactions |
+| 어드민 | 리포트를 통한 각 상품에 대한 거래량 확인| 	ViewTransactionReports |
 | 어드민 | 창고관리자, 점주 계정 회원 가입 승인 |AcceptUsers (UC-4)|
 | 어드민 | 모든 트랜잭션 내역 확인   | ViewTransactions |
 | 창고 관리자 | 어플리케이션에 계정 생성 신청                           | Register (UC-3) |
