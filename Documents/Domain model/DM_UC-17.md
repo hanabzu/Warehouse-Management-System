@@ -27,7 +27,7 @@
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
 | UserEntry  | search parameter | 사용자가 선택한 창고/지점의 Name or id        |
-|   | |                       |
+| DatabaseConnection  | 재고 데이터 | 사용자가 선택한 창고/지점의 현재 재고 데이터      |
 |         |            |                       |
 |         |            |                       |
 |         |            |                       |
