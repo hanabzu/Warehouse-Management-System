@@ -45,11 +45,11 @@
 | 유저 모듈 | 임시 계정 저장          | Register (UC-03)                                    |
 | 유저 모듈 | 새로운 계정 저장          | AcceptUsers (UC-04), UserData (UC-15) |
 | 유저 모듈 | 계정 정보 수정                               | ModifyProfile (UC-05), UserData (UC-15) |
-| 데이터 모듈 | 상품 데이터 저장.                         | ProductData(UC-07) (DataManagement, AddProduct) |
-| 데이터 모듈 | 재고 데이터 저장.                         | StockData(UC-08) (CheckStock, ManageStocks, ViewStocks) |
+| 데이터 모듈 | 상품 데이터 저장.                         | ProductData(UC-07) |
+| 데이터 모듈 | 재고 데이터 저장.                         | StockData(UC-08) |
 | 데이터 모듈 | 창고와 연결된 소매점 데이터 저장.                       | BranchData(UC-13) (ViewBranches) |
-| 데이터 모듈 | 트랜잭션 데이터를 저장.                         | TransactionData(UC-14) (ViewTransactionAmount , ViewAllTransactions, ViewTransactionReports, ConfirmTransaction, ViewTransactions) |
-| 데이터 모듈 | 사용자에 대해 입력된 정보 저장.                       | UserData(UC-15) (AcceptUsers, Register, Login, Logout ModifyProfile) |
+| 데이터 모듈 | 트랜잭션 데이터를 저장.                         | TransactionData(UC-14) |
+| 데이터 모듈 | 사용자에 대해 입력된 정보 저장.                       | UserData(UC-15) |
 | 데이터 모듈 | 리퀘스트 관련 정보 저장.                        | RequestData(UC-16) (Request) |
 | 분석모듈 | 트랜잭션 내역을 날짜, 창고, 지점별로 수치화	| ViewTransactions (UC-19) |
 | 분석모듈 | 지점별 판매 내역을 통해 판매량 데이터를 기간별로 그래프화 |	ViewTrendReport (UC-20) |
