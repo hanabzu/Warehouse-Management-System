@@ -1,4 +1,4 @@
-# ㄴDomain Model for UC-11: Request
+# Domain Model for UC-11: Request
 
 **1) Extraction the Responsibilities**
 
