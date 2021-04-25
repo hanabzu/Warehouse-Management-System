@@ -1,4 +1,4 @@
-# Use Case: Logout
+# Use Case UC-2: Logout
 
 ## **Related Requirements**
 

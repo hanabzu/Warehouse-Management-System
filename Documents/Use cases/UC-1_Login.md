@@ -1,8 +1,8 @@
-# Use Case: Login
+# Use Case UC-1: Login
 
 ## **Related Requirements**
 
-REQ-7
+REQ-7, REQ-31, REQ-32
 
 ## **Initiating Actors**
 

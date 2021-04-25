@@ -1,4 +1,4 @@
-# Use Case: SaleData(Management)
+# Use Case UC-12: SaleData(Management)
 
 ## **Related Requirements**
 - REQ-25, REQ-26

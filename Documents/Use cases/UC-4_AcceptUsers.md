@@ -1,4 +1,4 @@
-# Use Case: AcceptUsers
+# Use Case UC-4 : AcceptUsers
 
 ## **Related Requirements**
 

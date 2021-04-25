@@ -2,47 +2,46 @@
 
 | Actor | Actor's Goal                                                          | Use case name (넘버링은 완성 후에) |
 | ------------| ----------------------------------------------------------------- | ----------  |
-| 어드민 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login |
-| 어드민 | 로그아웃 버튼을 눌러 로그아웃               | Logout |
-| 어드민 | 상품 데이터 추가/삭제/수정. | DataManagement |
-| 어드민 | 창고들의 상품 재고 확인 | CheckStock |
-| 어드민 | 리포트를 통한 각 상품에 대한 거래량 확인|	ViewTransactionAmount|
-| 어드민 | 창고관리자, 점주 계정 회원 가입 승인 |AcceptUsers|
-| 어드민 | 모든 트랜잭션 내역 확인   | ViewAllTransactions |
-| 창고 관리자 | 어플리케이션에 계정 생성 신청                           | Register |
-| 창고 관리자 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login |
-| 창고 관리자 | 로그아웃 버튼을 눌러 로그아웃               | Logout |
-| 창고 관리자 | 계정정보 수정                                          | ModifyProfile |
-| 창고 관리자 | 창고에 상품을 등록                               | AddProduct |
-| 창고 관리자 | 창고의 재고를 변경                                      | ManageStocks |
+| 어드민 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login (UC-1) |
+| 어드민 | 로그아웃 버튼을 눌러 로그아웃               | Logout (UC-2) |
+| 어드민 | 상품 데이터 추가/삭제/수정. | ProductData (UC-7) |
+| 어드민 | 창고들의 상품 재고 확인 | ViewStock |
+| 어드민 | 리포트를 통한 각 상품에 대한 거래량 확인| ViewTransactions |
+| 어드민 | 창고관리자, 점주 계정 회원 가입 승인 |AcceptUsers (UC-4)|
+| 어드민 | 모든 트랜잭션 내역 확인   | ViewTransactions |
+| 창고 관리자 | 어플리케이션에 계정 생성 신청                           | Register (UC-3) |
+| 창고 관리자 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | UC-1 |
+| 창고 관리자 | 로그아웃 버튼을 눌러 로그아웃               | UC-2 |
+| 창고 관리자 | 계정정보 수정                                          | ModifyProfile (UC-5) |
+| 창고 관리자 | 창고의 재고를 변경                                      | StockData |
 | 창고 관리자 | 창고의 상품들의 재고를 열람                        | ViewStocks |
-| 창고 관리자 | 지점에게서 받은 발주를 자동으로 결재                           | ConfirmTransaction |
-| 창고 관리자 | 필요한 상품을 자동으로 발주                          | Order, +(트랜잭션UC)|
-| 창고 관리자 | 자동 발주 날짜 이전에 발주할 목록 확인 후 수정 | Order |
+| 창고 관리자 | 지점에게서 받은 발주를 자동으로 결재                           | ShopkeeperOrder (UC-9) |
+| 창고 관리자 | 필요한 상품을 자동으로 발주                          | StorekeeperOrder (UC-10) |
+| 창고 관리자 | 자동 발주 날짜 이전에 발주할 목록 확인 후 수정 | UC-10 |
 | 창고 관리자 | 창고가 보낸 발주 내역 열람                                   | ViewTransactions |
 | 창고 관리자 | 근처 창고의 현재 재고 상황 확인                         | ViewStocks |
 | 창고 관리자 | 근처 창고의 차후 재고 예측 리포트 확인                  | ViewPredictionReports |
 | 창고 관리자 | 창고의 재고 예측 리포트 확인                            | ViewPredictionReports |
 | 창고 관리자 | 창고의 과년도 동일 분기(계절)의 입출고 동향 리포트 확인 | ViewTransactionReports |
 | 창고 관리자 | 연결된 소매점 열람                              | ViewBranches |
-| 창고 관리자 | 어드민에게 리퀘스트                                     | Request |
-| 점주 | 어플리케이션에 계정 생성 신청 | Register |
-| 점주 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인      | Login |
-| 점주 | 로그아웃을 눌러 로그아웃.      | Logout |
-| 점주 | 계정정보 수정      | ModifyProfile |
+| 창고 관리자 | 어드민에게 리퀘스트                                     | Request (UC-11) |
+| 점주 | 어플리케이션에 계정 생성 신청 | UC-3 |
+| 점주 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인      | UC-1 |
+| 점주 | 로그아웃을 눌러 로그아웃.      | UC-2 |
+| 점주 | 계정정보 수정      | UC-5 |
 | 점주 | 판매 동향리포트 탭에서 주위 지역 판매 동향리포트를 확인한다.             | ViewTransactionReports |
 | 점주 | 판매 동향리포트 탭에서 이전 달 상품들의 판매 동향 리포트를 확인한다.      | ViewTransactionReports |
 | 점주 | 판매 동향리포트 탭에서 다음 달 상품들의 판매 예측 리포트를 확인한다.   | ViewTransactionReports |
 | 점주 | 판매 동향리포트 탭에서 과년도 동일 분기의 판매 동향 리포트를 확인한다.     | ViewTransactionReports |
-| 점주 | 연결된 창고 탭에서 창고에 발주를 넣는다.           | Order |
+| 점주 | 연결된 창고 탭에서 창고에 발주를 넣는다.           | UC-9 |
 | 점주 | 연결된 창고 탭에서 창고와의 트랜잭션 내역을 확인한다.           | ViewTransactions |
 | 점주 | 연결된 창고 탭에서 연결된 창고의 상품 재고를 확인한다.        | ViewStocks |
 | 점주 | 현재 지점 탭에서 현재 지점의 상품 재고 현황을 확인 한다.          | ViewStocks - 창고와 분리할 것인지? |
-| 점주 | 컴플레인 탭에서 필요한 상품/브랜드를 요청한다.             | Request |
-| 점주 | 컴플레인 탭에서 상품/브랜드에 대한 컴플레인을 신청한다.              | Request |
-| 점주 | 현재 지점 탭에서 현재 지점의 재고를 업데이트한다. (상품 추가/수정/삭제)           | ManageStocks |
-| 점주 | 현재 지점 탭에서 판매 상품들에 대한 내역을 등록한다.      | sale dataManagement    |
-| 유저 모듈 | 유효한 계정 확인 | Login, Register, AuthenticateUser, UserData                  |
+| 점주 | 컴플레인 탭에서 필요한 상품/브랜드를 요청한다.             | UC-11 |
+| 점주 | 컴플레인 탭에서 상품/브랜드에 대한 컴플레인을 신청한다.              | UC-11 |
+| 점주 | 현재 지점 탭에서 현재 지점의 재고를 업데이트한다. (상품 추가/수정/삭제)         | UC-8 |
+| 점주 | 현재 지점 탭에서 판매 상품들에 대한 내역을 등록한다.      | SaleData (UC-12) |
+| 유저 모듈 | 유효한 계정 확인 | Login, Register, AuthenticateUser (UC-6), UserData         |
 | 유저 모듈 | 임시 계정 저장          | Register                                                     |
 | 유저 모듈 | 새로운 계정 저장          | AcceptUsers, UserData |
 | 유저 모듈 | 계정 정보 수정                               | ModifyProfile, UserData |
