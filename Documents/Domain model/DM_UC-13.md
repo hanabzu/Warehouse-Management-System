@@ -1,6 +1,6 @@
 # Domain Model for UC-13 : BranchData 
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -11,7 +11,7 @@
 
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -21,7 +21,7 @@
 | DatabaseConnection  <->  Archiver  | 입력된 데이터를 데이터베이스에 저장한다.   | request save |
 
 
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
