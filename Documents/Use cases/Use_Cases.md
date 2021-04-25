@@ -1,6 +1,6 @@
 ** Use case (Actor's Goal) **
 
-| Actor | Actor's Goal                                                          | Use case name (넘버링은 완성 후에) |
+| Actor | Actor's Goal                                                          | Use case name |
 | ------------| ----------------------------------------------------------------- | ----------  |
 | 어드민 | 로그인 탭에서 자신의 아이디, 비밀번호를 입력해 로그인  | Login (UC-01) |
 | 어드민 | 로그아웃 버튼을 눌러 로그아웃               | Logout (UC-02) |
