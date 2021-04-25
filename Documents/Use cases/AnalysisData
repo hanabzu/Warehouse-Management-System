@@ -1,0 +1,38 @@
+# Use Case: AnalysisData
+
+## **Related Requirements**
+
+
+
+## **Initiating Actors**
+
+Any of: 
+
+## **Actor's Goal**
+
+
+
+## **Participating Actors**
+
+ - 
+
+## **Preconditions**
+
+
+
+
+## **Postconditions**
+
+
+
+## Flow of Events for Main Success Scenario
+
+| Direction | n    | Actor Action                                                 |
+| --------- | ---- | ------------------------------------------------------------ |
+| →         | 1    |      |
+| →         | 2    |   |
+| →         | 3    |              |
+| ←         | 4    |        |
+| ←         | 5    |  |
+| ←         | 6    |  |
+| ←         | 7    |     |
