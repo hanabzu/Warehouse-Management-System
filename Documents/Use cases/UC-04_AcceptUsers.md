@@ -2,7 +2,7 @@
 
 ## **Related Requirements**
 
-REQ-5
+REQ-3, REQ-5, REQ-6, REQ-31
 
 ## **Initiating Actors**
 
@@ -33,7 +33,7 @@ Any of: 어드민
 | →         | 3    | 어드민이 열람할 임시 계정을 클릭한다.             |
 | ←         | 4    | 시스템이 어드민이 클릭한 임시 계정 정보를 띄운다. |
 | →         | 5    | 어드민이 수락 버튼을 클릭한다.                    |
-|           | 6    | include UserData                                  |
+|           | 6    | include UserData (UC-15)                          |
 | ←         | 7    | 시스템이 새로운 계정이 추가되었음을 알린다.       |
 
 

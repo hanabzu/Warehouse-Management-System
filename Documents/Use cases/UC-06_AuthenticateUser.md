@@ -2,7 +2,7 @@
 
 ## **Related Requirements**
 
-REQ-7, REQ-8, REQ-31, REQ-32
+REQ-3, REQ-7, REQ-8, REQ-31, REQ-32
 
 ## **Initiating Actors**
 
@@ -28,7 +28,7 @@ REQ-7, REQ-8, REQ-31, REQ-32
 | →         | 1    | 유저 모듈이 암호화된 아이디, 패스워드를 전달한다.            |
 | ←         | 2    | 데이터 모듈에서 암호화된 아이디 계정을 찾아 계정 정보를 불러온다. |
 | ←         | 3    | 암호화된 패스워드가 같다면 인증을 확인한다.                  |
-|           | 4    | include UserData                                             |
+|           | 4    | include UserData (UC-15)                                     |
 
 ## Flow of Events for Extensions (Alternate Scenarios)
 2a. 암호화된 아이디와 같은 계정이 없을 경우
@@ -39,8 +39,8 @@ REQ-7, REQ-8, REQ-31, REQ-32
 
 3a. 암호화된 아이디와 같은 계정은 있으나 비밀번호가 틀렸을 경우
 
-| Direction | n    | Actor Action     |
-| --------- | ---- | ---------------- |
-| ←         | 1    | 인증을 거부한다. |
-|           | 2    | include UserData |
+| Direction | n    | Actor Action             |
+| --------- | ---- | ------------------------ |
+| ←         | 1    | 인증을 거부한다.         |
+|           | 2    | include UserData (UC-15) |
 

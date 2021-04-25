@@ -2,7 +2,7 @@
 
 ## **Related Requirements**
 
-REQ-7, REQ-31, REQ-32
+REQ-3, REQ-7, REQ-31, REQ-32
 
 ## **Initiating Actors**
 
@@ -31,7 +31,7 @@ Any of: 어드민, 창고관리자, 점주
 | →         | 2    | 유저는 아이디와 패스워드를 입력한다.                         |
 | →         | 3    | 유저는 로그인 버튼을 누른다.                                 |
 | ←         | 4    | 시스템은 유저 모듈에 유저가 입력한 아이디와 패스워드를 전달한다. |
-|           | 5    | include AuthenticateUser                                     |
+|           | 5    | include AuthenticateUser (UC-06)                             |
 | →         | 6    | 유저 모듈이 계정 정보를 전달한다.                            |
 | ←         | 7    | 유저에게 사용 권한을 부여한다.                               |
 
