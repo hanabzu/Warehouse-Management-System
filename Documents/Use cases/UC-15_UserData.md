@@ -2,7 +2,7 @@
 
 ## **Related Requirements**
 
-REQ-3 ,REQ-5, REQ-7, REQ-8
+REQ-3 ,REQ-5, REQ-7, REQ-8, REQ-32
 
 ## **Initiating Actors**
 
