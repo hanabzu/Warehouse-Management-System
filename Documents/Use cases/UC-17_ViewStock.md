@@ -1,4 +1,4 @@
-# Use Case - 17: ViewStock
+# Use Case UC-17: ViewStock
 
 ## **Related Requirements**
 REQ-2, REQ-11, REQ-12, REQ-22 REQ-33

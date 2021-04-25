@@ -1,4 +1,4 @@
-# Use Case - 19 : ViewTransaction
+# Use Case UC-19 : ViewTransaction
 
 ## **Related Requirements**
  REQ-10, REQ-18, REQ-19, REQ-21
