@@ -17,8 +17,10 @@
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
-| Controller  <->   TimeGetter | 로그아웃 시의 time info를 가져온다. | get time |
-| Controller  <->  UserModuleConnection | 컨트롤러는 AccountInfo와 time info를 UserModuleConnection으로 옮긴다. | convey request |
+| Controller  &lt;-&gt;   TimeGetter | 로그아웃 시의 time info를 가져온다. | convey request |
+| AccountInfo <-> Controller | AccountInfo를 컨트롤러에 전달한다. | convey data |
+| Controller  <->  UserModuleConnection | 컨트롤러는 AccountInfo와 time info를 UserModuleConnection으로 옮긴다. | convey data |
+| Controller <-> ViewPage | 로그아웃 페이지를 요청한다. | convey request |
 | ViewPage <-> PageInfo | 로그아웃 후 페이지를 보여준다.    | provides data |
 
 **3) Extracting the Attributes**
