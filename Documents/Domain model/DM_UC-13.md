@@ -26,5 +26,5 @@
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
 | Judging  | 변경가능여부 | 데이터를 변경해도 되는지 안되는지에 대한 정보 |
-| Archiver | 제품명,브랜드| 변경될 데이터 |
+| Archiver | 매장명, 위치 | 변경될 데이터 |
 
