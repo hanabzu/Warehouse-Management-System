@@ -17,7 +17,8 @@
 
 | Concept pair | Association Description | Association Name |
 | --------- | ----------------------- | ---------------- |
-| Controller <-> Database Connection | 컨트롤러가 Database Connection에게 판매 동향 데이터를 가져올 것을 요청한다. | Convey Request |
+| Controller <-> Database Connection | 컨트롤러가 Database Connection에게 판매 동향 데이터를 가져올 것을 요청한다. | Convey Request\| |
+| Controller <-> Page Maker | 컨트롤러가 Page Maker에게 판매 동향 리포트 페이지를 만들 것을 요청한다. | Convey Request |
 | Trends Data <-> Trends Report Maker | 판매 동향 데이터를 Trends Report Maker에 넘겨준다. | Convey Data |
 | Category <-> Trends Report Maker | 사용자가 선택한 카테고리를 Trends Report Maker에 넘겨준다. | Convey Data |
 | Trends Report <-> Page Maker | 판매 동향 리포트를 Page Maker에 넘겨준다. | Convey Report |
