@@ -7,7 +7,7 @@
 | UseCase, UseCase의 논리적 집합 혹은 전체 시스템과 관련된 작업을 조정하고 다른 concept에 위임한다.  | D    | Controller   |
 | 데이터를 변경하기 위한 데이터베이스 쿼리를 준비한다  | D    | DatabaseConnection   |
 | 요청된 데이터를 데이터베이스상에 저장한다.| D   | Archiver   |
-
+| 트랜잭션 데이터| F | TransactionData |
 
 
 **2) Extracting the Associations**
@@ -22,5 +22,5 @@
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
-| Archiver | 제품명,브랜드| 변경될 데이터 |
+| TransactionData | 제품명,브랜드| 변경될 데이터 |
 
