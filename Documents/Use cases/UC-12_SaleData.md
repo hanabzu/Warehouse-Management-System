@@ -13,7 +13,7 @@ Any of: 점주
 
 ## **Participating Actors**
 
- - StockData
+ - 데이터 모듈
 
 ## **Preconditions**
 
