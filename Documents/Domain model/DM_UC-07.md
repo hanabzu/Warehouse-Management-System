@@ -7,6 +7,7 @@
 | UseCase, UseCase의 논리적 집합 혹은 전체 시스템과 관련된 작업을 조정하고 다른 concept에 위임한다.  | D    | Controller   |
 | 상품에 대한 정보가 변경(추가,수정,삭제) 될 수 있는지 판단한다.        | K    | Judging    |
 | 데이터를 변경하기 위한 데이터베이스 쿼리를 준비한다  | D    | DatabaseConnection   |
+| 제품에 대한 데이터 | K | ProductInfo |
 | 요청된 데이터를 데이터베이스상에 저장한다.| D   | Archiver   |
 
 
@@ -25,5 +26,5 @@
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
 | Judging  | 변경가능여부 | 데이터를 변경해도 되는지 안되는지에 대한 정보 |
-| Archiver | 제품명,브랜드| 변경될 데이터 |
+| ProductInfo | 제품명,브랜드 | 변경될 데이터 |
 
