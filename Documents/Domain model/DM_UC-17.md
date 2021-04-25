@@ -1,6 +1,6 @@
 # Domain Model for UC-17 : ViewStock
 
-## Extracting the Responsibilities
+**1) Extracting the Responsibilities**
 
 | Responsibility Description                                   | Type | Concept Name |
 | ------------------------------------------------------------ | ---- | ------------ |
@@ -11,7 +11,7 @@
 | 사용자에게 보여줄 재고 데이터 페이지.                           | K    | InterfacePage |
 
 
-## Extracting the Associations
+**2) Extracting the Associations**
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
@@ -22,7 +22,7 @@
 | PageMaker   <->   InterfacePage | 사용자에게 보여 줄 페이지를 준비한다.              |  Prepare                |
 
 
-## Extracting the Attributes
+**3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
