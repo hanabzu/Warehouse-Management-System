@@ -1,4 +1,4 @@
-# Use Case UC-5: ModifyProfile
+# Use Case UC-05: ModifyProfile
 
 ## **Related Requirements**
 
