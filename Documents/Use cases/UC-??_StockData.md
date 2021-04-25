@@ -1,4 +1,4 @@
-# Use Case: ProductData
+# Use Case: StockData
 
 ## **Related Requirements**
 
