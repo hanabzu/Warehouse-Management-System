@@ -1,17 +1,17 @@
 21년 1학기 소프트웨어 공학
 
 Warehouse-Management-System
--------------------------------------------------------
+=======================================================
 
 
 
-#### **Team Members**
+## **Team Members**
 
 [권은혜](https://github.com/mnyee)   [김지용](https://github.com/Gyong97)   [박재욱](https://github.com/Mesopotamia2957)   [손현민](https://github.com/boy-min)   [유영준](https://github.com/ppikppik)   [한경빈](https://github.com/hanabzu)
 
 
 
-#### **1st Checkpoint**
+## **1st Checkpoint**
 
 [Problem Statement](https://github.com/hanabzu/Warehouse-Management-System/blob/main/Documents/Problem_Statement.md)
 
@@ -23,6 +23,6 @@ Warehouse-Management-System
 
 
 
-#### **2nd Checkpoint**
+## **2nd Checkpoint**
 [System Design Document](https://github.com/hanabzu/Warehouse-Management-System/tree/main/Documents/System%20Design%20Document)
 
