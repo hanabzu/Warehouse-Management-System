@@ -17,13 +17,13 @@ class DatabaseModule:
                             PRIMARY KEY(time, id))")
 
     def insertAccount(self, accountInfo):
-        self.__cur.execute("INSERT INTO accounts_data(id, pw, position, name, address)\
+        self.__cur.execute("INSERT INTO accounts_data(id, pw, position, name, address) \
                             VALUES(?,?,?,?,?)", accountInfo)
     
     def insertTempAccount(self, tempAccountInfo):
-        self.__cur.execute("INSERT INTO temp_accounts_data(id, pw, position, name, address)\
+        self.__cur.execute("INSERT INTO temp_accounts_data(id, pw, position, name, address) \
                             VALUES(?,?,?,?,?)", tempAccountInfo)
 
     def insertLog(self, log):
-        self.__cur.execute("INSERT INTO logs_data(time, id, cond)\
+        self.__cur.execute("INSERT INTO logs_data(time, id, cond) \
                             VALUES(?,?,?)", log)
