@@ -44,4 +44,4 @@ class initiator:
         controller(now_user)
 
 
-initiator()
+# initiator()

@@ -102,3 +102,4 @@ class OrderListMaker:
         order_num = self.warehouse + "{0}{1}{2}{3}".format(date.month, date.day, date.minute , date.second)
         return order_num
             
+
