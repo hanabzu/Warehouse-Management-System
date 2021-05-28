@@ -1,3 +1,4 @@
+import datetime as dt
 import OrderSender as ods
 
 class OrderList:
@@ -18,8 +19,9 @@ class OrderList:
 
 
 class OrderListMaker:
-    def __init__(self, connected_wh):
+    def __init__(self, connected_wh, user_id):
         self.warehouse = connected_wh
+        self.user_id = user_id
         self.total_price = 0
         self.OrderList = None
         self.item_name = []
@@ -29,11 +31,12 @@ class OrderListMaker:
 
         self.view_stock()
         self.MakeOrder()
-    #stub
+    
 
     def getPrice(self):
         return self.total_price
 
+    #stub
     def view_stock(self):
         stock_file = open("stock_list.txt", "r", encoding="utf8")
         
@@ -96,5 +99,7 @@ class OrderListMaker:
         return 0 # 해당 상품 없을 때
         
     def OrderNumberMaker(self):
-        
+        date = dt.datetime.now()
+        order_num = self.warehouse + "{0}{1}{2}{3}".format(date.month, date.day, date.minute , date.second)
+        return order_num
             

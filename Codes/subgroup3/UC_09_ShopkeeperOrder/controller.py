@@ -1,4 +1,12 @@
 import OrderListMaker as olm
+
+
+class user:
+    def __init__(self, type,id, connected,money):
+        self.id = id
+        self.type = type
+        self.connected = connected
+        self.money = money
 class controller:
     def __init__(self, user):
         self.user = user
@@ -6,11 +14,25 @@ class controller:
         self.result = None
     
     def MakeOrder(self):
-        OrderListMaker = olm.OrderListMaker("w20210527")
+        OrderListMaker = olm.OrderListMaker("w20210527", self.user.id)
         self.price = OrderListMaker.getPrice()
 
-
-
-# test = controller("점주")
-# test.MakeOrder()
-# print(test.price)
+#driver
+class initiator:
+    def __init__(self):
+        user = input("1. 창고주 / 2. 점주 ")
+        user_info = []
+        if user == 1:
+            user_info.append("shop")
+            info_file = open("점주.txt", "r", encoding="utf8")
+            for i in range(3):
+                line = info_file.getline()
+                temp = line.split(' ')
+                user_info.append(temp[2])
+        else:
+            user_info.append("warehouse")
+            info_file = open("창고주.txt", "r", encoding="utf8")
+            for i in range(3):
+                line = info_file.getline()
+                temp = line.split(' ')
+                user_info.append(temp[2])
