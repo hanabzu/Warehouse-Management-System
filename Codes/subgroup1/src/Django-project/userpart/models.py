@@ -30,4 +30,4 @@ class log(models.Model):
     cond = models.TextField()
 
     def __str__(self):
-        return (self.account, time)
+        return (self.account, self.time)
