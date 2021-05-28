@@ -1,4 +1,5 @@
 # user module
+from .models import *
 
 def encrypt(accountInfo):
     eA = accountInfo
@@ -17,7 +18,9 @@ def decrypt(eA):
 def userData(accountInfo):
     A = accountInfo
     if A.flag == True:
-        # dbconnection.deleteOld(A.id)
+        oldA = AccountInfo.obgects.get(pk=A._id)
+        oldA.delete()
+    newA = AccountInfo(accountid=A._id) # 11:05 check
     
     #dbconnection.saveNew(A)
 
