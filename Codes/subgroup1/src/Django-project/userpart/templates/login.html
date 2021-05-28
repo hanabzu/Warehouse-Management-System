@@ -1,4 +1,28 @@
 {% extends 'navbar.html' %}
+
+{% block contents %}
+
+<div class="container">
+    <h2>Login!</h2>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        Username : <input type="text" name="username">
+        <br>
+        Password : <input type="password" name="password">
+        <br>
+        <input type="submit" value="Login">
+
+    </form>
+</div>
+
+{% endblock %}
+
+
+
+
+
+<!--
+{% extends 'navbar.html' %}
 {% block content2 %}
 <!doctype html>
 <html lang="ko">
@@ -33,3 +57,4 @@
 
 </html>
 {% endblock %}
+-->
