@@ -1,2 +1,6 @@
 Codes/subgroup1/src/myvenv/
+<<<<<<< HEAD
 *.pyc
+=======
+Codes/subgroup1/src/Django-project/**/*.pyc
+>>>>>>> 804000aedb82f52221d314bd22324b563fbe524e
