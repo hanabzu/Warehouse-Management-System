@@ -3,7 +3,11 @@ from .models import User_info
 
 # Create your views here.
 
-def login_func(request):
+def signup(request):
+    return render(request, 'signup.html')
+
+    
+def login(request):
     id = request.POST.get('id')
     pw = request.POST.get('pw')
     check = 0
