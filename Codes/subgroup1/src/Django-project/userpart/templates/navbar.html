@@ -24,14 +24,17 @@
             <div class="collapse navbar-collapes" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item activate">
-                        <a clas="nav-link"href="{% url 'main' %}">Home <span class="sr-only">(current)</span></a>
+                        <a clas="nav-link"href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item">
                     {% if check == 1 %}
                     <a class="nav-link"href="{% url 'logout' %}">Logout</a>
+                    <!--
                     {% else %}
-                    <a class="nav-link"href="{% url 'login_func' %}">Login</a>
+                    <a class="nav-link"href="{% url 'login' %}">Login</a>
+                    -->
+
                     {% endif %}
                     </li>
 
