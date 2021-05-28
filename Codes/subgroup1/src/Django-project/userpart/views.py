@@ -41,16 +41,8 @@ def free(request):
 def logout(request):
     request.session.modified = True
     del request.session['id']
-    return redirect('login_func')
+    return redirect('login')
 
-
-
-
-
-
-
-"""
 def home(request):
 
     return render(request, 'home.html')
-"""
