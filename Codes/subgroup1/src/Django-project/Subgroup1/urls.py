@@ -5,4 +5,5 @@ import userpart.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('userpart/', include('userpart.urls')),
+    path('',userpart.views.home, name='home'),
 ]
