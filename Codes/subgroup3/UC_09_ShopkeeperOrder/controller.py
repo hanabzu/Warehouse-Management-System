@@ -1,6 +1,4 @@
-import UC_09_ShopkeeperOrder
-
-
+import OrderListMaker as olm
 class controller:
     def __init__(self, user):
         self.user = user
@@ -8,5 +6,11 @@ class controller:
         self.result = None
     
     def MakeOrder(self):
-        OrderListMaker = OrderListMaker()
+        OrderListMaker = olm.OrderListMaker("w20210527")
+        self.price = OrderListMaker.getPrice()
 
+
+
+# test = controller("점주")
+# test.MakeOrder()
+# print(test.price)
