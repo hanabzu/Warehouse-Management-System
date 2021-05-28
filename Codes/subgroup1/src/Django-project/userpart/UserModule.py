@@ -18,7 +18,7 @@ def decrypt(eA):
 def userData(accountInfo):
     A = accountInfo
     if A.flag == True:
-        oldA = AccountInfo.obgects.get(pk=A._id)
+        oldA = AccountInfo.objects.get(pk=A._id)
         oldA.delete()
     newA = AccountInfo(accountid=A._id) # 11:05 check
     
