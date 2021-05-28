@@ -12,27 +12,36 @@ class controller:
         self.user = user
         self.price = 0
         self.result = None
+        self.MakeOrder()
     
     def MakeOrder(self):
-        OrderListMaker = olm.OrderListMaker("w20210527", self.user.id)
+        OrderListMaker = olm.OrderListMaker("w20210527")
         self.price = OrderListMaker.getPrice()
+
+
 
 #driver
 class initiator:
     def __init__(self):
-        user = input("1. 창고주 / 2. 점주 ")
+        user_type = input("1. 창고주 / 2. 점주 ")
         user_info = []
-        if user == 1:
+        if user_type == 1:
             user_info.append("shop")
-            info_file = open("점주.txt", "r", encoding="utf8")
+            info_file = open("창고주.txt", "r", encoding="utf8")
             for i in range(3):
-                line = info_file.getline()
+                line = info_file.readline()
                 temp = line.split(' ')
                 user_info.append(temp[2])
         else:
             user_info.append("warehouse")
-            info_file = open("창고주.txt", "r", encoding="utf8")
+            info_file = open("점주.txt", "r", encoding="utf8")
             for i in range(3):
-                line = info_file.getline()
+                line = info_file.readline()
                 temp = line.split(' ')
                 user_info.append(temp[2])
+        
+        now_user = user(user_info[0],user_info[1],user_info[2],user_info[3])
+        controller(now_user)
+
+
+initiator()

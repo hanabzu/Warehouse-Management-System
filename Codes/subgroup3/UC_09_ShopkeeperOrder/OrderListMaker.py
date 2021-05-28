@@ -19,9 +19,8 @@ class OrderList:
 
 
 class OrderListMaker:
-    def __init__(self, connected_wh, user_id):
+    def __init__(self, connected_wh):
         self.warehouse = connected_wh
-        self.user_id = user_id
         self.total_price = 0
         self.OrderList = None
         self.item_name = []
