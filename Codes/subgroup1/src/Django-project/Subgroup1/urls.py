@@ -4,5 +4,7 @@ import userpart.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',userpart.views.home, name="home")
+    path('',userpart.views.main, name="main"),
+    path('',userpart.views.login_func, name="Login"),
+    path('',userpart.views.logout, name="Logout"),
 ]
