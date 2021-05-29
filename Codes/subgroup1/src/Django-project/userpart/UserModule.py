@@ -30,6 +30,8 @@ class UserModule:
 
     def authenticateUser(self, accountInfo):
         A = self.encrypt(accountInfo)
-        
+        ca = CompareAccount.CompareAccount()
+        ca.compareID(A)
+        return ca.returnRet()
 
-        return ret
+        
