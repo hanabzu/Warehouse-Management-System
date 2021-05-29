@@ -1,4 +1,4 @@
-{% extends 'navbar.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <!doctype html>
@@ -8,7 +8,7 @@
     <title>로그인</title>
  </head>
  <body>
-     <<h1>로그인화면</h1>
+     <h1>로그인화면</h1>
 
 <div class="alert alert-success" role="alert">
     {{errMsg}}
@@ -27,7 +27,7 @@
             <label for="exampleInputPassword">비밀번호</label>
             <input type="password" class="form-control" name = "pw" id="exampleInputPassword" placeholder="Password">
         </div>
-        
+
         <button type="submit" class ="btn btn-primary">submit</button>
     </form>
  </body>
