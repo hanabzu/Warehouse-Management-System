@@ -20,9 +20,9 @@ class UserModule:
     def userData(self, accountInfo):
         A = accountInfo
         if A.flag == True:
-            oldA = AccountInfo.objects.get(pk=A._id)
+            oldA = data_AccountInfo.objects.get(pk=A._id)
             oldA.delete()
-        newA = AccountInfo(accountid = A._id, password = A._pw, position = A._position,\
+        newA = data_AccountInfo(accountid = A._id, password = A._pw, position = A._position,\
                             name = A._name, address = A._address)
         newA.save()
         
