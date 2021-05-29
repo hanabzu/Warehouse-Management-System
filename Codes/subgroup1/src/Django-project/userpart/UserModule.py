@@ -1,34 +1,35 @@
 # user module
 from .models import *
+from .userclasses import *
 
-def encrypt(accountInfo):
-    eA = accountInfo
-    
-    # encryption of Id, password
+class UserModule:
+    def encrypt(self,accountInfo):
+        eA = accountInfo
+        
+        # encryption of Id, password
 
-    return eA
+        return eA
 
-def decrypt(eA):
-    A = eA
+    def decrypt(self,eA):
+        A = eA
 
-    # decryption of Id, password
+        # decryption of Id, password
 
-    return A
+        return A
 
-def userData(accountInfo):
-    A = accountInfo
-    if A.flag == True:
-        oldA = AccountInfo.objects.get(pk=A._id)
-        oldA.delete()
-    newA = AccountInfo(accountid=A._id) # 11:05 check
-    
-    #dbconnection.saveNew(A)
-
-
-def authenticateUser(accountInfo):
-    A = encrypt(accountInfo)
-    
+    def userData(self, accountInfo):
+        A = accountInfo
+        if A.flag == True:
+            oldA = AccountInfo.objects.get(pk=A._id)
+            oldA.delete()
+        newA = AccountInfo(accountid = A._id, password = A._pw, position = A._position,\
+                            name = A._name, address = A._address)
+        newA.save()
+        
 
 
+    def authenticateUser(self, accountInfo):
+        A = self.encrypt(accountInfo)
+        
 
-    return ret
+        return ret
