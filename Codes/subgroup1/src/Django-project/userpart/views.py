@@ -6,6 +6,14 @@ from .models import User_info
 def signup(request):
     return render(request, 'signup.html')
 
+#success signup
+def dosignup(request):
+    if request.method == 'POST':
+        id = request.POST['id']
+        pw = request.POST['pw']
+        #new_user = WebUser(user_id=id, user_pw = pw)
+        #new_user.save()
+    return render(request, 'success.html')
     
 def login(request):
     id = request.POST.get('id')
@@ -39,9 +47,11 @@ def main(request):
 def free(request):
     return render(request, 'free.html')
 def logout(request):
-    request.session.modified = True
-    del request.session['id']
-    return redirect('login')
+    if request.method == 'POST':
+        request.session.modified = True
+        #del request.session['id']
+        return redirect('home')
+    return render(request, 'login.html')
 
 def home(request):
 
