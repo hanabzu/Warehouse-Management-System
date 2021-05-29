@@ -1,4 +1,5 @@
 import OrderListMaker
+import OrderList
 import os
 class OrderSender:
     def __init__(self, order_num, order_list, receiver, user_id, user_type):
@@ -24,13 +25,16 @@ class OrderSender:
         for i in range(len(self.order_list.item_name)):
             print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
         order_file2.close()
-    
+
+class OrderTaker:
+    def __init__(self,user_id):
+        self.user_id = user_id
     def TakeOrder(self): # return Receive_Order, sender_list
         Receive_Orders = []
         temp_name = []
         temp_brand = []
         temp_number = []
-        order_list = os.listdir(self.sender + "_Order")
+        order_list = os.listdir(self.user_id + "_Order")
         sender_list = []
         if len(order_list) == 0:
             print("No receive order!")
@@ -48,7 +52,7 @@ class OrderSender:
                     temp_name.append(temp[0])
                     temp_brand.append(temp[1])
                     temp_number.append((int)(temp[2]))
-                Receive_Orders.append(OrderListMaker.OrderList(temp_name,temp_brand,[],temp_number))
+                Receive_Orders.append(OrderList.OrderList(temp_name,temp_brand,[],temp_number, order_list[i][:-4]))
                 temp_name.clear()
                 temp_brand.clear()
                 temp_number.clear()

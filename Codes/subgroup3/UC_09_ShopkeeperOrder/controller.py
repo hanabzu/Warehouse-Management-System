@@ -1,5 +1,5 @@
 import OrderListMaker as olm
-
+import OrderSender as ods
 
 class sh_user:
     def __init__(self, type,id, connected,money):
@@ -22,8 +22,16 @@ class controller:
         self.user = user
         self.price = 0
         self.result = None
-        self.MakeOrder()
-    
+        
+        if self.user.type == 'shop':
+            self.MakeOrder()
+        else:
+            self.TakeOrder()
+
+    def TakeOrder(self):
+        order_taker = ods.OrderTaker(self.user.id)
+        receive_order_list, sender_list = order_taker.TakeOrder()
+
     def MakeOrder(self):
         OrderListMaker = olm.OrderListMaker("w20210527")
         self.price = OrderListMaker.getPrice()
