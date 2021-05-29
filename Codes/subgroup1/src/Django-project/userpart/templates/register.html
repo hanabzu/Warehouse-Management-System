@@ -9,10 +9,10 @@
     <title>Title</title>
 </head>
 <body>
-    <form name="test" action="" method="post">{% csrf_token%}
-        ID : <input type = "text" name="accountid" > </br>
-        PW : <input type = "text" name="password"></br>
-        Position : <input type = "text" name= "position"></br>
+    <form name="test" action="/userpart/dosignup/" method="post">{% csrf_token%}
+        ID : <input type = "text" name="id" > </br>
+        PW : <input type = "password" name="pw"></br>
+        PW CONF : <input type = "password" name= "pwconf"></br>
         <input type="submit" value="전송">
     </form>
 </body>
