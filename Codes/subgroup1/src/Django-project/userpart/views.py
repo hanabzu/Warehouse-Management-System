@@ -5,17 +5,50 @@ from .UserModule import *
 from .userclasses import *
 
 # Create your views here.
+def acceptUsers(request):
+    tAs = data_TempAccountInfo.objects.all()
+    return render(request, 'acceptUsers.html', {'tAs' : tAs})
 
+<<<<<<< HEAD
 def register(request):
     return render(request, 'signup.html')
+=======
+def viewTempAccountInfo(request):
+    tempAccount = request.POST.get(tempA.accountid)
+    tA = data_TempAccountInfo.objects.get(pk=tempAccount)
+    return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
+
+def register(request):
+    accountid = request.POST.get('accountid')
+    password = request.POST.get('password')
+    position = request.POST.get('position')
+    name = request.POST.get('name')
+    address = request.POST.get('address')
+
+    if not (accountid==None or password==None or position==None):
+        A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
+        UM = UserModule()
+
+        ret = UM.register(A) # true false
+
+        if ret == True:
+            tA = data_TempAccountInfo(accountid = A._accountid, password = A._password, position = A._position,\
+                                name = '123', address = '123')
+            tA.save()
+        else: 
+            print()
+
+        return render(request, 'success.html')
+    return render(request, 'register.html')
+>>>>>>> 54fa3978d4331cdf0397a4b9af7649ed470c5123
 
 #success signup
 def dosignup(request):
-    if request.method == 'POST':
+    ''' if request.method == 'POST':
         id = request.POST['id']
         pw = request.POST['pw']
         #new_user = WebUser(user_id=id, user_pw = pw)
-        #new_user.save()
+        #new_user.save()'''
     return render(request, 'success.html')
     
 def login(request):
@@ -25,7 +58,13 @@ def login(request):
     A = AccountInfo.AccountInfo((id,pw,False,'','','',False))
     UM = UserModule()
 
-    ret = UM.register(A)
+    ret = UM.authenticateUser(A)
+
+    # login accept,
+
+    # login refuse
+
+    # id nomatch
 
     return render(request, 'login.html', {'errMsg' : ret, 'check' : ret})
 
