@@ -4,7 +4,7 @@ class User_info(models.Model) :
     id = models.CharField(max_length = 20, primary_key = True)
     pw = models.CharField(max_length =20)
 
-class AccountInfo(models.Model):
+class data_AccountInfo(models.Model):
     accountid = models.CharField(max_length = 20, primary_key=True)
     password = models.CharField(max_length = 20)
     position = models.TextField()
@@ -14,7 +14,7 @@ class AccountInfo(models.Model):
     def __str__(self):
         return self.accountid
 
-class tempAccountInfo(models.Model):
+class data_TempAccountInfo(models.Model):
     accountid = models.CharField(max_length = 20, primary_key=True)
     password = models.CharField(max_length = 20)
     position = models.TextField()
@@ -24,8 +24,8 @@ class tempAccountInfo(models.Model):
     def __str__(self):
         return self.accountid
 
-class log(models.Model):
-    account = models.ForeignKey(AccountInfo, on_delete=models.CASCADE)
+class data_log(models.Model):
+    account = models.ForeignKey(data_AccountInfo, on_delete=models.CASCADE)
     time = models.DateTimeField()
     cond = models.TextField()
 
