@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form name="test" action="" method="post">{% csrf_token%}
+        ID : <input type = "text" name="accountid" > </br>
+        PW : <input type = "text" name="password"></br>
+        Position : <input type = "text" name= "position"></br>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
+
+{% endblock %}
