@@ -6,7 +6,7 @@ from .userclasses import *
 
 # Create your views here.
 
-def signup(request):
+def register(request):
     return render(request, 'signup.html')
 
 #success signup
