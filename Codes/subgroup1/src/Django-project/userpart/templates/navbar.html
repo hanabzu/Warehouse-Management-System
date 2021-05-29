@@ -30,10 +30,10 @@
                     <li class="nav-item">
                     {% if check == 1 %}
                     <a class="nav-link"href="{% url 'logout' %}">Logout</a>
-                    <!--
+                    
                     {% else %}
                     <a class="nav-link"href="{% url 'login' %}">Login</a>
-                    -->
+                    
 
                     {% endif %}
                     </li>
@@ -61,16 +61,8 @@
                 </form>
             </div>
         </nav>
-        {% block content2 %}
+        {% block content %}
         {% endblock %}
 
 
 
-
-<!-- 기본 템플릿 안에 삽입될 내용 Start 
-{% block content %}
-{% endblock %}
-
-</body>
-</html>
--->
