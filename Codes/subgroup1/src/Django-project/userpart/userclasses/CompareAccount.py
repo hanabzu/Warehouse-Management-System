@@ -19,9 +19,7 @@ class CompareAccount:
             self.__ret = "Agree"
         else:
             self.__ret = "Refuse"
-            
-        if A._register == False:
-            self.saveLog(dA)
+        self.saveLog(dA)
         
     def saveLog(self, accountInfo):
         # saveLog to models
