@@ -1,20 +1,15 @@
-{% extends 'navbar.html' %}
-
-{% block contents %}
-
-<div class="container">
-    <h2>Sign Up!</h2>
-    <form action="{% url 'signup' %}" method="POST">
-        {% csrf_token %} <!-- for 보안 -->
-        Username : <input type="text" name="username">
-        <br>
-        Password : <input type="password" name="password1">
-        <br>
-        Confirm Password : <input type="password" name="password2">
-        <br>
-        <input type="submit" value="Sign Up">
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form name="test" action="dojoin" method="post">
+        ID : <input type = "text" name="id" > </br>
+        PW : <input type = "password" name="pw"></br>
+        PW CONF : <input type = "password" name= "pwconf"></br>
+        
     </form>
-</div>
-
-{% endblock %}
+</body>
+</html>
