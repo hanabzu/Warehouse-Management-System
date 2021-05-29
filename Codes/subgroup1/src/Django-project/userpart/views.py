@@ -9,10 +9,6 @@ def acceptUsers(request):
     tAs = data_TempAccountInfo.objects.all()
     return render(request, 'acceptUsers.html', {'tAs' : tAs})
 
-<<<<<<< HEAD
-def register(request):
-    return render(request, 'signup.html')
-=======
 def viewTempAccountInfo(request):
     tempAccount = request.POST.get(tempA.accountid)
     tA = data_TempAccountInfo.objects.get(pk=tempAccount)
@@ -40,7 +36,6 @@ def register(request):
 
         return render(request, 'success.html')
     return render(request, 'register.html')
->>>>>>> 54fa3978d4331cdf0397a4b9af7649ed470c5123
 
 #success signup
 def dosignup(request):
