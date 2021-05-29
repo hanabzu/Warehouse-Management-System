@@ -25,18 +25,31 @@ class OrderSender:
             print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
         order_file2.close()
     
-    def TakeOrder(self):
-        Receive_Order = []
+    def TakeOrder(self): # return Receive_Order, sender_list
+        Receive_Orders = []
         temp_name = []
         temp_brand = []
         temp_number = []
         order_list = os.listdir(self.sender + "_Order")
+        sender_list = []
         if len(order_list) == 0:
+            print("No receive order!")
             pass
         else:
             for i in range(len(order_list)):
                 file = open(order_list[i], "r", encoding="utf8")
-                temp = file.split(' ')
-                temp_name.append(temp[0])
-                temp_brand.append(temp[1])
-                temp_number.append((int)(temp[2]))
+                temp = file.readline()
+                sender_list.append(temp[:-1])
+                while True:
+                    temp = file.readline()
+                    if not temp:  # line이 없으면, 읽어올 라인이 없으면
+                        break
+                    temp = file.split(' ')
+                    temp_name.append(temp[0])
+                    temp_brand.append(temp[1])
+                    temp_number.append((int)(temp[2]))
+                Receive_Orders.append(OrderListMaker.OrderList(temp_name,temp_brand,[],temp_number))
+                temp_name.clear()
+                temp_brand.clear()
+                temp_number.clear()
+        return Receive_Orders, sender_list
