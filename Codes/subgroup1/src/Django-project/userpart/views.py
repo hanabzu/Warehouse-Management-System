@@ -14,10 +14,10 @@ def login(request):
     id = request.POST.get('id')
     pw = request.POST.get('pw')
 
-    A = AccountInfo.AccountInfo((id,pw,False,'','','',False,))
+    A = AccountInfo.AccountInfo((id,pw,False,'','','',False))
     UM = UserModule()
 
-    ret = UM.authenticateUser(A)
+    ret = UM.register(A)
 
     return render(request, 'login.html', {'errMsg' : ret, 'check' : ret})
 
