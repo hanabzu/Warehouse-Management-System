@@ -26,19 +26,53 @@ def register(request):
     name = request.POST.get('name')
     address = request.POST.get('address')
 
-    if not (accountid==None or password==None or position==None):
-        A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
-        UM = UserModule()
+    # start page
+    if accountid==None or password==None or position==None:
+        return render(request, 'register.html')
+
+    # check blank spaces
+    if accountid=='' or password=='' or password_conf =='' or position==''\
+       or name =='' or address=='' :
+       errMsg = "You have to fill all blanks"
+       return render(request, 'register.html',{'errMsg' : errMsg})
+
+    # check ID
+    if len(accountid) < 5:
+        errMsg = "ID is too short"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+    re_id = re.compile('\w+')
+    if re_id.match(accountid)==None:
+        errMsg = "invalid ID"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+
+    # check password
+    if ' ' in password:
+        errMsg = "invalid password"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+    if password != password_conf:
+        errMsg = "You must type same passwords"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+    if password == accountid:
+        errMsg = "Password and ID must differ"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+
+
+    re_withblank = re.compile('[^ a-zA-Z0-9_]+')
+
+    # check position
+    if re_withblank.match(position):
+        errMsg = "invalid position"
+        return render(request, 'register.html',{'errMsg' : errMsg})
 
     # check name
     if re_withblank.match(name):
         errMsg = "invalid name"
         return render(request, 'register.html',{'errMsg' : errMsg})
 
-        if ret == True:
-            tA = data_TempAccountInfo(accountid = A._accountid, password = '123', position = 'admin',\
-                                name = '123', address = '123')
-            tA.save()
+    # check address
+    if re_withblank.match(address):
+        errMsg = "invalid address"
+        return render(request, 'register.html',{'errMsg' : errMsg})
 
     A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
     UM = UserModule()
