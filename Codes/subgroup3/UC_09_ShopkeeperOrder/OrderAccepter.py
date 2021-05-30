@@ -26,7 +26,7 @@ class OrderAccepter:
             stock_item_name.append(temp[0])
             stock_item_brand.append(temp[1])
             stock_item_number.append((int)(temp[3]))
-
+        stock_file.close()
         stock_name_brand = []
         for i in range(len(stock_item_name)): # name, brand로 아이템을 구분 하므로 찾기 편하게 묶어서 list만들기.
             stock_name_brand.append((stock_item_name[i],stock_item_brand[i]))
@@ -75,7 +75,7 @@ class OrderAccepter:
             stock_item_name.append(temp[0])
             stock_item_brand.append(temp[1])
             stock_item_number.append((int)(temp[3]))
-
+        stock_file.close()
         stock_name_brand = []
         for i in range(len(stock_item_name)): # name, brand로 아이템을 구분 하므로 찾기 편하게 묶어서 list만들기.
             stock_name_brand.append((stock_item_name[i],stock_item_brand[i]))

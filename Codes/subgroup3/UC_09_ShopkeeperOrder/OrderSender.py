@@ -2,25 +2,21 @@ import OrderListMaker
 import OrderList
 import os
 class OrderSender:
-    def __init__(self, order_num, order_list, receiver, user_id, user_type):
+    def __init__(self, order_list, receiver, user_id, user_type):
         self.order_list = order_list
-        self.order_num = order_num
         self.user_type = user_type
         if self.user_type == "shop": # 점주 일때는 sendOrder
             self.receiver = receiver
             self.sender = user_id
-        else:                        # 창고주 일때는 TakeOrder
-            self.sender = receiver
-            self.receiver = user_id
 
     def SendOrder(self):
-        order_file = open(self.receiver + "_Order" + "\\" + self.order_num + ".txt", "w", encoding="utf8")
+        order_file = open(self.receiver + "_Order" + "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
         print("{}".format(self.sender), file = order_file)
         for i in range(len(self.order_list.item_name)):
             print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
         order_file.close()
 
-        order_file2 = open(self.sender + "_Order" +  "\\" + self.order_num + ".txt", "w", encoding="utf8")
+        order_file2 = open(self.sender + "_Order" +  "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
         print("Ready", file= order_file2)
         for i in range(len(self.order_list.item_name)):
             print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)

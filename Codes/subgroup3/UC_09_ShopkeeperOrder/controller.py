@@ -42,9 +42,8 @@ class controller:
                     order_accepter.selfcheck()
                 Result = order_accepter.getResult() # Accept/ Reject 결과 리스트 반환 받기.
 
-                for i in range(len(Result)):
-                    pass
-                    #DB connection 으로 재고에 반영
+                db.DBconnection(Result, receive_order_list).UpdateStock() # 발주 승인에 따른 재고량 감소.
+                
 
                 #Result Sender로 결과 전송
 
