@@ -22,7 +22,7 @@ def register(request):
     name = request.POST.get('name')
     address = request.POST.get('address')
 
-    if not (accountid==None or password==None or position==None):
+    if not (accountid=='' or password=='' or position==''):
         A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
         UM = UserModule()
 
@@ -32,8 +32,6 @@ def register(request):
             tA = data_TempAccountInfo(accountid = A._accountid, password = A._password, position = A._position,\
                                 name = '123', address = '123')
             tA.save()
-        else: 
-            print()
 
         return render(request, 'success.html')
     return render(request, 'register.html')
