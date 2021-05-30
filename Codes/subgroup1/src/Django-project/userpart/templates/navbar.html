@@ -8,8 +8,8 @@
     <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item ">
-                {% if A.3 == 'admin' or A.3 == 'user' %}
-                <a class="nav-link" href="/userpart/logout/{{A.0}}/">로그아웃</a>
+                {% if A.is_authenticated %}
+                <a class="nav-link" href="{% url 'userpart:logout' %}/">로그아웃</a>
                 {% else %}
                 <a class="nav-link" href="{% url 'userpart:login' %}">로그인</a>
             
