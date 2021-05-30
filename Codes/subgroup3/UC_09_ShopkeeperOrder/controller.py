@@ -40,6 +40,7 @@ class controller:
                 order_list, result = rs.ResultTaker(user.id)
                 
                 # 결과 확인 후 MOneyChanger로 money 차감.
+                mc.MoneyChanger([order_list[i].total_price for i in range(len(order_list))],result,user.id)
 
         else:
             # 발주 확인 작동 가정
