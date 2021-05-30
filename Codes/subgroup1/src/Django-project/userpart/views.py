@@ -106,7 +106,7 @@ def register(request):
         errMsg = "already registered ID"
 
     if errMsg=='':
-        return render(request, 'success.html')
+        return render(request, 'success2.html')
     else:
         return render(request, 'register.html',{'errMsg' : errMsg})
     
@@ -205,3 +205,8 @@ def home(request):
     UC = UserModule()
     print(UC)
     return render(request, 'home.html')
+
+def home2(request):
+    UC = UserModule()
+    print(UC)
+    return render(request, 'home2.html')
