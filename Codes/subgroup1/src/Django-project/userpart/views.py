@@ -17,7 +17,7 @@ def viewTempAccountInfo(request, tA_id):
     #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     if request.method == 'POST':
         if request.POST.get('approve'):
-            A=AccountInfo.AccountInfo((tA.accountid, tA.password, False, tA.position, tA.name, tA.address, False))
+            A = AccountInfo.AccountInfo((tA.accountid,tA.password,False,tA.position,tA.name,tA.address,False))
             UM = UserModule()
             UM.userData(A)
             tA.delete()
