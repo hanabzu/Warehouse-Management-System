@@ -155,6 +155,9 @@ def main(request):
     
     return render(request, 'main.html')
 
+def progressSuccess(request):
+    return render(request, 'progressSuccess.html')
+
 def free(request):
     return render(request, 'free.html')
 
