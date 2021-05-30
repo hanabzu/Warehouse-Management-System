@@ -14,13 +14,13 @@
             </div>
         </div>
     </div>
-    <form name="test" action="{% url 'userpart:progressSuccess' %}" method="">{% csrf_token%}
-        <input type="submit" value="승인">
+    <form name="test" action="" method="POST">{% csrf_token%}
+        <input type="submit" name ="approve" value="approve">
 
     <h5 class="border-bottom my-3 py-2">가입거절사유란입니다.</h5>
-    <form action="{% url 'userpart:progressSuccess' %}" method="">
+    <form action="{% url 'userpart:progressSuccess' %}" method="POST">
         <textarea name="content" id="content" rows="5"></textarea>
-        <input type="submit" value="거절">
+        <input type="submit" name = "deny" value="deny">
         </form>
 </div>
 {% endblock %}
