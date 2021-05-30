@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="nav-item">
-                    {% A.3 == 'admin' or A.3 == 'user' %}
+                    {% if check == 1 %}
                     <a class="nav-link"href="{% url 'logout' %}">Logout</a>
                     
                     {% else %}
