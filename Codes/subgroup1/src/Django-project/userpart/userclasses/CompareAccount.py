@@ -16,6 +16,7 @@ class CompareAccount:
 
     def comparePW(self, dA, A):
         if dA.password == A._password:
+            A._position = dA.position
             self.__ret = "Agree"
         else:
             self.__ret = "Refuse"
