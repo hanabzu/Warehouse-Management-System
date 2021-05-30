@@ -151,7 +151,7 @@ def login(request):
 
     # login accept,
     if retAuth == 'Agree':
-        return render(request, 'success.html', {'A' : A})
+        return render(request, 'success.html', {'A' : A.getAccountInfo()})
     elif retAuth == 'Refuse':
         errMsg = "Wrong password"
         return render(request, 'login.html', {'errMsg' : errMsg})
