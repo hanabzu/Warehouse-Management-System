@@ -2,6 +2,7 @@ import OrderListMaker as olm
 import OrderSender as ods
 import OrderAccepter as oa
 import DBconnection as db
+import ResultSender as rs
 class sh_user:
     def __init__(self, type,id, connected,money):
         self.id = id
@@ -25,17 +26,23 @@ class controller:
         self.result = None
         
         if self.user.type == 'shop':
+            # 발주 신청시
             order_list = self.MakeOrder()
             order_sender = ods.OrderSender(order_list, self.user.connected, self.user.id ,self,user.type)
             order_sender.SendOrder()
 
             # 결과확인 시
+            
             # ResultSender모듈을 통해서 결과 확인.
             # 결과 확인 후 MOneyChanger로 money 차감.
         else:
+            # 발주 확인 작동 가정
+
             receive_order_list, sender_list = self.TakeOrder()
-            if len(receive_order_list) != 0:
+            if len(receive_order_list) != 0: # 받은 발주가 있을 때
                 order_accepter = oa.OrderAccepter(self.user.id, receive_order_list)
+
+                #자동 모드에 따라 발주 확인 및 승인/거절
                 if self.user.mode == 'on':
                     order_accepter.AutoChecker()
                 else:
@@ -43,11 +50,10 @@ class controller:
                 Result = order_accepter.getResult() # Accept/ Reject 결과 리스트 반환 받기.
 
                 db.DBconnection(Result, receive_order_list).UpdateStock() # 발주 승인에 따른 재고량 감소.
-                
 
-                #Result Sender로 결과 전송
+                # 결과 전송
+                rs.ResultSender(sender_list, Result, [receive_order_list[i].order_number for i in range(len(receive_order_list))])
 
-                #
 
     def TakeOrder(self):
         order_taker = ods.OrderTaker(self.user.id)
