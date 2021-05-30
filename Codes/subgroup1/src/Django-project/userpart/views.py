@@ -15,6 +15,16 @@ def viewTempAccountInfo(request, tA_id):
     tA= get_object_or_404(data_TempAccountInfo, pk=tA_id)
     #tempAccount = request.POST.get('accountid')
     #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
+    if request.method == 'POST':
+        if request.POST.get('approve'):
+            #supervisor.status = "approved"
+            #supervisor.save()
+            return render(request, 'progressSuccess.html')
+        elif request.POST.get('deny'):
+            #supervisor.status = "denied"
+            #supervisor.save()
+            return render(request, 'progressSuccess.html')
+
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
 
 def register(request):
@@ -178,7 +188,7 @@ def main(request):
     return render(request, 'main.html')
 
 def progressSuccess(request):
-    return render(request, 'progressSuccess.html')
+    return render(request, 'success.html')
 
 def free(request):
     return render(request, 'free.html')
