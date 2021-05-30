@@ -22,7 +22,7 @@ def register(request):
     name = request.POST.get('name')
     address = request.POST.get('address')
 
-    if not (accountid==None or password==None or position==None):
+    if not (accountid=='' or password=='' or position==''):
         A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
         UM = UserModule()
 
