@@ -58,7 +58,7 @@ def register(request):
     tAs = data_TempAccountInfo.objects.all()
     for tA in tAs:
         if accountid == tA.accountid:
-            errMsg = "ID is waiting for accepting"
+            errMsg = "This ID waiting for accepting"
             return render(request, 'register.html',{'errMsg' : errMsg})
 
     # check password
@@ -128,7 +128,12 @@ def login(request):
     # start page
     if accountid==None or password==None:
         return render(request, 'login.html')
-        
+
+    # check blank spaces
+    if accountid=='' or password=='':
+       errMsg = "You have to fill all blanks"
+       return render(request, 'login.html',{'errMsg' : errMsg})
+
     # check ID validity
     if len(accountid) < 5:
         errMsg = "ID is too short (least : 5)"
@@ -159,31 +164,6 @@ def login(request):
     else: # NoMatch
         errMsg = "No match ID"
         return render(request, 'login.html', {'errMsg' : errMsg})
-
-    '''
-    check = 0
-    errMsg = ''
-    try : 
-        if request.session.get('id', False):
-            errMsg = request.session.get('id')+'님 반갑습니다'
-            check = 1
-        elif id == None or pw == None :
-            errMsg = 'ID 또는 비밀번호를 입력하지 않았습니다.'
-        elif User_info.objects.filter(id = id, pw = pw):
-            errMsg = '로그인 성공!'
-            check = 1
-            request.session['id'] = request.POST.get('id')
-            request.session['check'] = check
-        else:
-            errMsg = '로그인 실패'
-
-    except:
-        errMsg = 'ID 또는 비밀번호가 불일치합니다.'
-
-    context = {'errMsg' : errMsg, 'check' : check}
-
-    return render(request, 'login.html', context)
-    '''
 
 def main(request):
     
