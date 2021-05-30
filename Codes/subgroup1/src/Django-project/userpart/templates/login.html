@@ -17,15 +17,12 @@
     <form method = 'POST' action = "{% url 'login' %}">
         {% csrf_token %}
         <div class = "form-group">
-            <label for="exampleInputEmail">아이디</label>
-            <input type="text" class="form-control" name = "id" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            ID : <input type = "text" name="accountid"></br>
         </div>
     <form method = 'POST' action = "{% url 'login' %}">
         {% csrf_token %}
         <div class = "form-group">
-            <label for="exampleInputPassword">비밀번호</label>
-            <input type="password" class="form-control" name = "pw" id="exampleInputPassword" placeholder="Password">
+            PW : <input type = "text" name="password"></br>
         </div>
 
         <button type="submit" class ="btn btn-primary">submit</button>

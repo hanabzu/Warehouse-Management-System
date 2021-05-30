@@ -40,7 +40,6 @@ def register(request):
     if len(accountid) < 5:
         errMsg = "ID is too short (least : 5)"
         return render(request, 'register.html',{'errMsg' : errMsg})
-    re_id = re.compile('\w+')
     if not accountid.isalnum():
         errMsg = "invalid ID"
         return render(request, 'register.html',{'errMsg' : errMsg})
@@ -110,21 +109,44 @@ def dosignup(request):
     return render(request, 'success.html')
     
 def login(request):
-    id = request.POST.get('id')
-    pw = request.POST.get('pw')
+    errMsg =''
+    accountid = request.POST.get('accountid')
+    password = request.POST.get('password')
 
-    A = AccountInfo.AccountInfo((id,pw,False,'','','',False))
+    # start page
+    if accountid==None or password==None:
+        return render(request, 'login.html')
+        
+    # check ID validity
+    if len(accountid) < 5:
+        errMsg = "ID is too short (least : 5)"
+        return render(request, 'login.html',{'errMsg' : errMsg})
+    if not accountid.isalnum():
+        errMsg = "invalid ID"
+        return render(request, 'login.html',{'errMsg' : errMsg})
+
+    # check password validity
+    if ' ' in password:
+        errMsg = "invalid password"
+        return render(request, 'login.html',{'errMsg' : errMsg})
+    if len(password) < 8:
+        errMsg = "password is too short (least : 8)"
+        return render(request, 'login.html',{'errMsg' : errMsg})
+
+    A = AccountInfo.AccountInfo((accountid,password,False,'','','',False))
     UM = UserModule()
 
-    ret = UM.authenticateUser(A)
+    retAuth = UM.authenticateUser(A)
 
     # login accept,
-
-    # login refuse
-
-    # id nomatch
-
-    return render(request, 'login.html', {'errMsg' : ret, 'check' : ret})
+    if retAuth == 'Agree':
+        return render(request, 'success.html')
+    elif retAuth == 'Refuse':
+        errMsg = "Wrong password"
+        return render(request, 'login.html', {'errMsg' : errMsg})
+    else: # NoMatch
+        errMsg = "No match ID"
+        return render(request, 'login.html', {'errMsg' : errMsg})
 
     '''
     check = 0
