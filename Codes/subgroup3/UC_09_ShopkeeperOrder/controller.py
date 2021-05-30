@@ -1,6 +1,7 @@
 import OrderListMaker as olm
 import OrderSender as ods
-
+import OrderAccepter as oa
+import DBconnection as db
 class sh_user:
     def __init__(self, type,id, connected,money):
         self.id = id
@@ -24,18 +25,40 @@ class controller:
         self.result = None
         
         if self.user.type == 'shop':
-            self.MakeOrder()
+            order_list = self.MakeOrder()
+            order_sender = ods.OrderSender(order_list, self.user.connected, self.user.id ,self,user.type)
+            order_sender.SendOrder()
+
+            # 결과확인 시
+            # ResultSender모듈을 통해서 결과 확인.
+            # 결과 확인 후 MOneyChanger로 money 차감.
         else:
-            self.TakeOrder()
+            receive_order_list, sender_list = self.TakeOrder()
+            if len(receive_order_list) != 0:
+                order_accepter = oa.OrderAccepter(self.user.id, receive_order_list)
+                if self.user.mode == 'on':
+                    order_accepter.AutoChecker()
+                else:
+                    order_accepter.selfcheck()
+                Result = order_accepter.getResult() # Accept/ Reject 결과 리스트 반환 받기.
+
+                for i in range(len(Result)):
+                    pass
+                    #DB connection 으로 재고에 반영
+
+                #Result Sender로 결과 전송
+
+                #
 
     def TakeOrder(self):
         order_taker = ods.OrderTaker(self.user.id)
         receive_order_list, sender_list = order_taker.TakeOrder()
+        return receive_order_list, sender_list
 
     def MakeOrder(self):
         OrderListMaker = olm.OrderListMaker("w20210527")
         self.price = OrderListMaker.getPrice()
-
+        return OrderListMaker.OrderList
 
 
 #driver
