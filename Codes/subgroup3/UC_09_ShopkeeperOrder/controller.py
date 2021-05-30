@@ -3,6 +3,7 @@ import OrderSender as ods
 import OrderAccepter as oa
 import DBconnection as db
 import ResultSender as rs
+import MoneyChanger as mc
 class sh_user:
     def __init__(self, type,id, connected,money):
         self.id = id
@@ -39,7 +40,7 @@ class controller:
                 order_list, result = rs.ResultTaker(user.id)
                 
                 # 결과 확인 후 MOneyChanger로 money 차감.
-                
+
         else:
             # 발주 확인 작동 가정
 
