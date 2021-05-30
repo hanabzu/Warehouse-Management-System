@@ -1,5 +1,5 @@
 from view_transaction.database_connection import databaseconnection as dbc
-from page_maker import pagemaker
+from view_transaction.page_maker import pagemaker
 
 class Controller :
     def __init__(self, transaction_info) :
