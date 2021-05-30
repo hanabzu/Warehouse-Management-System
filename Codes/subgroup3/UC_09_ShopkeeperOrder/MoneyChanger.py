@@ -12,7 +12,7 @@ class MoneyChanger:
 
         file= open("점주.txt", "w", encoding='utf8')
         for i in range(0, len(lines)-1):
-            print(lines[i].rstrip('\n'))
+            print(lines[i].rstrip('\n'), file = file)
         
         temp = lines[-1].split(' ')
         money = int(temp[2])
@@ -22,5 +22,5 @@ class MoneyChanger:
             else:
                 pass
         print("{} {} {}".format(temp[0], temp[1], money), file = file)
-
+        file.close()
         print("balance update!")

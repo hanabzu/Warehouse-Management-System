@@ -28,14 +28,17 @@ class DBconnection:
             stock_name_brand.append((item_name[i],item_brand[i]))
 
         stock_file = open("stock_list.txt", "w", encoding="utf8")
-        for order in range(self.order_list):
-            for i in range(len(order.item_name)):
-                if self.result[i] == 'Accept':  ## 결과가 Accept일때만 재고 감소
-                    stock_index = stock_name_brand.index(order.item_name[i], order.item_brand[i]) # 재고 데이터 인덱스 찾기.
+        iter = 0
+        for order in self.order_list:
+            if self.result[iter] == 'Accept':  ## 결과가 Accept일때만 재고 감소
+                for i in range(len(order.item_name)):
+                    stock_index = stock_name_brand.index((order.item_name[i], order.item_brand[i])) # 재고 데이터 인덱스 찾기.
                     item_number[stock_index] -= order.item_number[i]
+            iter += 1
 
         for i in range(len(item_name)):
             print("{} {} {} {}".format(item_name[i],item_brand[i], item_price[i], item_number[i]), file= stock_file)
+        stock_file.close()
 
         
         

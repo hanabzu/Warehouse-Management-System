@@ -35,9 +35,9 @@ class ResultTaker:
         if os.path.isdir(os.getcwd() + '\\' + self.user_id + "_Order") == False:
             print("no order!")
             return order_list, result
-        order_num_list = os.listdir('\\'+ self.user_id + "_Order") # user가 신청한 발주 목록(주문번호.txt).
-        for order in range(order_num_list):
-            file = open('\\' + self.user_id + '_Order\\' + order, 'r', encoding='utf8')
+        order_num_list = os.listdir(os.getcwd() +'\\'+ self.user_id + "_Order") # user가 신청한 발주 목록(주문번호.txt).
+        for order in order_num_list:
+            file = open(os.getcwd() +'\\' + self.user_id + '_Order\\' + order, 'r', encoding='utf8')
             result.append(file.readline().rstrip('\n')) # 첫 줄이 결과
             # 나머지 파일 내용은 발주 목록. OrderList로 만들어서 반환 위해 OrderList화.
             lines = file.readlines()
@@ -51,8 +51,8 @@ class ResultTaker:
                 item_brand.append(temp[1])
                 item_price.append(int(temp[2]))
                 item_number.append(int(temp[3]))
-            order_list.append(OrderList.OrderList(item_name,item_brand, item_price, item_number, order[:-4])) # order에서 .txt를 빼면 주문번호.
-        
+            order_list.append(OrderList.OrderList(item_name[:],item_brand[:], item_price[:], item_number[:], order[:-4])) # order에서 .txt를 빼면 주문번호.
+            file.close()
         return order_list, result
 
         

@@ -7,6 +7,7 @@ class OrderAccepter:
         self.order_list = order_list[:] # copy해서 넣어준다.
         self.Result = []
 
+
     def getResult(self):
         return self.Result
 
@@ -36,8 +37,8 @@ class OrderAccepter:
             temp_minus = []
             count = 0
             for j in range(len(self.order_list[i].item_name)): # 각 발주 목록의의 품목 개수에 대해 반복.
-                if stock_name_brand.count(self.order_list[i].item_name[j], self.order_list[i].item_brand[j]) != 0: 
-                    stock_index = stock_name_brand.index(self.order_list[i].item_name[j], self.order_list[i].item_brand[j]) # 재고 데이터 인덱스 찾기.
+                if stock_name_brand.count((self.order_list[i].item_name[j], self.order_list[i].item_brand[j])) != 0: 
+                    stock_index = stock_name_brand.index((self.order_list[i].item_name[j], self.order_list[i].item_brand[j])) # 재고 데이터 인덱스 찾기.
                     if stock_item_number[stock_index] < self.order_list[i].item_number[j]: #재고 보다 주문 수량이 많을 시
                         self.Result.append('Reject') #Reject하고 넘어감
                         break
@@ -86,18 +87,18 @@ class OrderAccepter:
 
             stock_index_list = [] # 해당 발주 목록 품목들의 재고 인덱스 리스트
             for j in range(len(self.order_list[i].item_name)):
-                stock_index = stock_name_brand.index(self.order_list[i].item_name[j], self.order_list[i].item_brand[j]) # 재고 데이터 인덱스 찾기.
+                stock_index = stock_name_brand.index((self.order_list[i].item_name[j], self.order_list[i].item_brand[j])) # 재고 데이터 인덱스 찾기.
                 stock_index_list.append(stock_index)
             
             ## 선택한 발주 품목, 재고상황 보여주기
             self.showOrder(i, stock_index_list, stock_item_number)
 
             ## Accept/Reject 결정 , Accept 시 stock_item_number에서 재고량 감소.
-            Result = input("1. Accept  2.Reject ")
+            Result = int(input("1. Accept  2.Reject "))
             if Result == 1:
                 self.Result.append("Accept")
                 for j in range(len(stock_index_list)): # 재고량 감소. DB 반영 x
-                    stock_item_number[stock_index_list[j]] -= self.order_list.item_number[j]
+                    stock_item_number[stock_index_list[j]] -= self.order_list[i].item_number[j]
             else:
                 self.Result.append("Reject")
 

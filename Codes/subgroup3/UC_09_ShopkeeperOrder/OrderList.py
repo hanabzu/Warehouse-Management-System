@@ -11,6 +11,8 @@ class OrderList:
             self.total_price += item_price[i]*item_number[i]
         
     def printOrderList(self):
+        if self.item_price == []:
+            self.item_price = [0 for i in range(self.length)]
         print("OrderList>>.>>>>>")
         for i in range(self.length):
             print("{0: <20}{1: <20}{2: <20}{3: <20}".format(self.item_name[i],self.item_brand[i],self.item_price[i],self.item_number[i]))

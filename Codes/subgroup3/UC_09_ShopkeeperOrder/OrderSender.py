@@ -13,17 +13,17 @@ class OrderSender:
         if os.path.isdir(os.getcwd() + '\\' + self.receiver + "_Order") == False:
             os.mkdir(os.getcwd() + '\\' + self.receiver + "_Order")
 
-        order_file = open(self.receiver + "_Order" + "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
+        order_file = open(self.receiver + "_Order" + "\\" + self.order_list.order_number + ".txt", "w", encoding="utf8")
         print("{}".format(self.sender), file = order_file)
         for i in range(len(self.order_list.item_name)):
-            print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
+            print("{} {} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_price[i], self.order_list.item_number[i]), file = order_file)
         order_file.close()
         if os.path.isdir(os.getcwd() + '\\' + self.sender + "_Order") == False:
             os.mkdir(os.getcwd() + '\\' + self.sender + "_Order")
-        order_file2 = open(self.sender + "_Order" +  "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
+        order_file2 = open(self.sender + "_Order" +  "\\" + self.order_list.order_number + ".txt", "w", encoding="utf8")
         print("Ready", file= order_file2)
         for i in range(len(self.order_list.item_name)):
-            print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
+            print("{} {} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_price[i], self.order_list.item_number[i]), file = order_file2)
         order_file2.close()
 
 class OrderTaker:
@@ -33,6 +33,7 @@ class OrderTaker:
         Receive_Orders = []
         temp_name = []
         temp_brand = []
+        temp_price = []
         temp_number = []
         if os.path.isdir(os.getcwd() + '\\' + self.user_id + "_Order"):
             order_list = os.listdir(self.user_id + "_Order")
@@ -44,20 +45,23 @@ class OrderTaker:
             pass
         else:
             for i in range(len(order_list)):
-                file = open(order_list[i], "r", encoding="utf8")
+                file = open(self.user_id + "_Order\\" + order_list[i], "r", encoding="utf8")
                 temp = file.readline()
                 sender_list.append(temp.rstrip('\n'))
                 while True:
-                    temp = file.readline()
-                    if not temp:  # line이 없으면, 읽어올 라인이 없으면
+                    line = file.readline()
+                    if not line:  # line이 없으면, 읽어올 라인이 없으면
                         break
-                    temp = file.split(' ')
+                    temp = line.split(' ')
                     temp_name.append(temp[0])
                     temp_brand.append(temp[1])
-                    temp_number.append((int)(temp[2]))
-                Receive_Orders.append(OrderList.OrderList(temp_name,temp_brand,[],temp_number, order_list[i][:-4]))
+                    temp_price.append(int(temp[2]))
+                    temp_number.append(int(temp[3]))
+                Receive_Orders.append(OrderList.OrderList(temp_name[:],temp_brand[:],[],temp_number[:], order_list[i][:-4]))
                 temp_name.clear()
                 temp_brand.clear()
+                temp_price.clear()
                 temp_number.clear()
+                file.close()
         return Receive_Orders, sender_list
 
