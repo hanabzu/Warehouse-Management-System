@@ -8,9 +8,18 @@
     <title>Title</title>
 </head>
 <body>
-    success
+    {{A.accountid}}님 환영합니다.
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        
         <a class="navbar-brand" href="{% url 'home' %}">메인화면</a>
+
+    {% if A.position == 'admin' %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <a class="navbar-brand" href="{% url 'view' %}">회원가입수락</a>
+
+
+    {% endif %}    
 
 </body>
 </html>
