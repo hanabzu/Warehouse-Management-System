@@ -17,12 +17,13 @@ def viewTempAccountInfo(request, tA_id):
     #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     if request.method == 'POST':
         if request.POST.get('approve'):
-            #supervisor.status = "approved"
-            #supervisor.save()
+            A = AccountInfo.AccountInfo((tA.accountid,tA.password,False,tA.position,tA.name,tA.address,False))
+            UM = UserModule()
+            UM.userData(A)
+            tA.delete()
             return render(request, 'progressSuccess.html')
         elif request.POST.get('deny'):
-            #supervisor.status = "denied"
-            #supervisor.save()
+            
             return render(request, 'progressSuccess.html')
 
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
@@ -150,7 +151,7 @@ def login(request):
 
     # login accept,
     if retAuth == 'Agree':
-        return render(request, 'success.html')
+        return render(request, 'success.html',{'user' : A})
     elif retAuth == 'Refuse':
         errMsg = "Wrong password"
         return render(request, 'login.html', {'errMsg' : errMsg})
