@@ -4,6 +4,7 @@ from .models import *
 from .UserModule import *
 from .userclasses import *
 import re
+from datetime import datetime
 
 # Create your views here.
 def acceptUsers(request):
@@ -194,11 +195,10 @@ def progressSuccess(request):
 def free(request):
     return render(request, 'free.html')
 
-def logout(request):
-    if request.method == 'POST':
-        request.session.modified = True
-        #del request.session['id']
-        return redirect('home')
+def logout(request, accountid):
+    A = data_AccountInfo.objects.get(accountid = accountid)
+    log = data_log(account = A, time = datetime.now(), cond = 'Logout')
+    log.save()
     return render(request, 'login.html')
 
 def home(request):
