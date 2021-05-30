@@ -10,12 +10,16 @@ class OrderSender:
             self.sender = user_id
 
     def SendOrder(self):
+        if os.path.isdir(os.getcwd() + '\\' + self.receiver + "_Order") == False:
+            os.mkdir(os.getcwd() + '\\' + self.receiver + "_Order")
+
         order_file = open(self.receiver + "_Order" + "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
         print("{}".format(self.sender), file = order_file)
         for i in range(len(self.order_list.item_name)):
             print("{} {} {}".format(self.order_list.item_name[i], self.order_list.item_brand[i], self.order_list.item_number[i]), file = order_file)
         order_file.close()
-
+        if os.path.isdir(os.getcwd() + '\\' + self.sender + "_Order") == False:
+            os.mkdir(os.getcwd() + '\\' + self.sender + "_Order")
         order_file2 = open(self.sender + "_Order" +  "\\" + self.order_list.order_num + ".txt", "w", encoding="utf8")
         print("Ready", file= order_file2)
         for i in range(len(self.order_list.item_name)):
@@ -30,7 +34,10 @@ class OrderTaker:
         temp_name = []
         temp_brand = []
         temp_number = []
-        order_list = os.listdir(self.user_id + "_Order")
+        if os.path.isdir(os.getcwd() + '\\' + self.user_id + "_Order"):
+            order_list = os.listdir(self.user_id + "_Order")
+        else:
+            order_list = []
         sender_list = []
         if len(order_list) == 0:
             print("No receive order!")
@@ -39,7 +46,7 @@ class OrderTaker:
             for i in range(len(order_list)):
                 file = open(order_list[i], "r", encoding="utf8")
                 temp = file.readline()
-                sender_list.append(temp[:-1])
+                sender_list.append(temp.rstrip('\n'))
                 while True:
                     temp = file.readline()
                     if not temp:  # line이 없으면, 읽어올 라인이 없으면
@@ -53,3 +60,4 @@ class OrderTaker:
                 temp_brand.clear()
                 temp_number.clear()
         return Receive_Orders, sender_list
+
