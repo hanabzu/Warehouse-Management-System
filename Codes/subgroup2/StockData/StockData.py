@@ -15,18 +15,18 @@ class StockData(Frame):
         frame1 = Frame(self)
         frame1.pack(fill=X)
  
-        lblName = Label(frame1, text="제품명", width=10)
-        lblName.pack(side=LEFT, padx=10, pady=10)
+        name = Label(frame1, text="제품명", width=10)
+        name.pack(side=LEFT, padx=10, pady=10)
  
         entryName = Entry(frame1)
         entryName.pack(fill=X, padx=10, expand=True)
  
-        # 회사
+        # 재고량
         frame2 = Frame(self)
         frame2.pack(fill=X)
  
-        lblComp = Label(frame2, text="재고량", width=10)
-        lblComp.pack(side=LEFT, padx=10, pady=10)
+        stock = Label(frame2, text="재고량", width=10)
+        stock.pack(side=LEFT, padx=10, pady=10)
  
         entryComp = Entry(frame2)
         entryComp.pack(fill=X, padx=10, expand=True)
