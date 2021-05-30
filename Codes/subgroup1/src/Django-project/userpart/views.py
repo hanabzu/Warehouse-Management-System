@@ -1,5 +1,5 @@
 from django.db import reset_queries
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .UserModule import *
 from .userclasses import *
@@ -11,9 +11,10 @@ def acceptUsers(request):
     context = {'tAs' : tAs}
     return render(request, 'acceptUsers.html', context)
 
-def viewTempAccountInfo(request):
-    tempAccount = request.POST.get('accountid')
-    tA = data_TempAccountInfo.objects.get(pk=tempAccount)
+def viewTempAccountInfo(request, tA_id):
+    tA= get_object_or_404(data_TempAccountInfo, pk=tA_id)
+    #tempAccount = request.POST.get('accountid')
+    #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
 
 def register(request):
@@ -28,7 +29,7 @@ def register(request):
     # start page
     if accountid==None or password==None or position==None:
         return render(request, 'register.html')
-    
+
     # check blank spaces
     if accountid=='' or password=='' or password_conf =='' or position==''\
        or name =='' or address=='' :
@@ -43,7 +44,7 @@ def register(request):
     if re_id.match(accountid)==None:
         errMsg = "invalid ID"
         return render(request, 'register.html',{'errMsg' : errMsg})
-    
+
     # check password
     if ' ' in password:
         errMsg = "invalid password"
@@ -55,7 +56,7 @@ def register(request):
         errMsg = "Password and ID must differ"
         return render(request, 'register.html',{'errMsg' : errMsg})
 
-    
+
     re_withblank = re.compile('[^ a-zA-Z0-9_]+')
 
     # check position
