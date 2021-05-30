@@ -38,16 +38,24 @@ def register(request):
 
     # check ID
     if len(accountid) < 5:
-        errMsg = "ID is too short"
+        errMsg = "ID is too short (least : 5)"
         return render(request, 'register.html',{'errMsg' : errMsg})
     re_id = re.compile('\w+')
-    if re_id.match(accountid)==None:
+    if not accountid.isalnum():
         errMsg = "invalid ID"
         return render(request, 'register.html',{'errMsg' : errMsg})
+    tAs = data_TempAccountInfo.objects.all()
+    for tA in tAs:
+        if accountid == tA.accountid:
+            errMsg = "ID is waiting for accepting"
+            return render(request, 'register.html',{'errMsg' : errMsg})
 
     # check password
     if ' ' in password:
         errMsg = "invalid password"
+        return render(request, 'register.html',{'errMsg' : errMsg})
+    if len(password) < 8:
+        errMsg = "password is too short (least : 8)"
         return render(request, 'register.html',{'errMsg' : errMsg})
     if password != password_conf:
         errMsg = "You must type same passwords"
@@ -60,17 +68,17 @@ def register(request):
     re_withblank = re.compile('[^ a-zA-Z0-9_]+')
 
     # check position
-    if re_withblank.match(position):
+    if re_withblank.search(position):
         errMsg = "invalid position"
         return render(request, 'register.html',{'errMsg' : errMsg})
 
     # check name
-    if re_withblank.match(name):
+    if re_withblank.search(name):
         errMsg = "invalid name"
         return render(request, 'register.html',{'errMsg' : errMsg})
 
     # check address
-    if re_withblank.match(address):
+    if re_withblank.search(address):
         errMsg = "invalid address"
         return render(request, 'register.html',{'errMsg' : errMsg})
 
@@ -83,6 +91,8 @@ def register(request):
         tA = data_TempAccountInfo(accountid = A._accountid, password = A._password, position = A._position,\
                             name = A._name, address = A._address)
         tA.save()
+    else:
+        errMsg = "already registered ID"
 
     if errMsg=='':
         return render(request, 'success.html')
