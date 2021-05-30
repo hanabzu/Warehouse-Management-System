@@ -1,5 +1,5 @@
 from django.db import reset_queries
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .UserModule import *
 from .userclasses import *
@@ -10,9 +10,10 @@ def acceptUsers(request):
     context = {'tAs' : tAs}
     return render(request, 'acceptUsers.html', context)
 
-def viewTempAccountInfo(request):
-    tempAccount = request.POST.get('accountid')
-    tA = data_TempAccountInfo.objects.get(pk=tempAccount)
+def viewTempAccountInfo(request, tA_id):
+    tA= get_object_or_404(data_TempAccountInfo, pk=tA_id)
+    #tempAccount = request.POST.get('accountid')
+    #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
 
 def register(request):
@@ -22,14 +23,14 @@ def register(request):
     name = request.POST.get('name')
     address = request.POST.get('address')
 
-    if not (accountid=='' or password=='' or position==''):
+    if not (accountid==None or password==None or position==None):
         A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
         UM = UserModule()
 
         ret = UM.register(A) # true false
 
         if ret == True:
-            tA = data_TempAccountInfo(accountid = A._accountid, password = A._password, position = A._position,\
+            tA = data_TempAccountInfo(accountid = A._accountid, password = '123', position = 'admin',\
                                 name = '123', address = '123')
             tA.save()
 
