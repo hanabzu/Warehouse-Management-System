@@ -25,7 +25,7 @@ class OrderListMaker:
         
         while True:
             line = stock_file.readline()
-            if not line:  # line이 없으면, 읽어올 라인이 없으면
+            if not line:  # line이 없으면, 읽어올 라인이 없으면s
                 break
             temp = line.split(' ')
             self.item_name.append(temp[0])

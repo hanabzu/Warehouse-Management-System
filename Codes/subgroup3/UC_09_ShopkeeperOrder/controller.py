@@ -26,15 +26,20 @@ class controller:
         self.result = None
         
         if self.user.type == 'shop':
-            # 발주 신청시
-            order_list = self.MakeOrder()
-            order_sender = ods.OrderSender(order_list, self.user.connected, self.user.id ,self,user.type)
-            order_sender.SendOrder()
+            choice = input("1.발주 신청  2. 발주 결과 확인 ")
 
-            # 결과확인 시
-            
-            # ResultSender모듈을 통해서 결과 확인.
-            # 결과 확인 후 MOneyChanger로 money 차감.
+            if choice == 1:
+                # 발주 신청시
+                order_list = self.MakeOrder()
+                order_sender = ods.OrderSender(order_list, self.user.connected, self.user.id ,self,user.type)
+                order_sender.SendOrder()
+            else:
+                # 결과확인 시
+                # ResultSender모듈을 통해서 결과 확인.
+                order_list, result = rs.ResultTaker(user.id)
+                
+                # 결과 확인 후 MOneyChanger로 money 차감.
+                
         else:
             # 발주 확인 작동 가정
 
@@ -61,7 +66,7 @@ class controller:
         return receive_order_list, sender_list
 
     def MakeOrder(self):
-        OrderListMaker = olm.OrderListMaker("w20210527")
+        OrderListMaker = olm.OrderListMaker(self.user.connected)
         self.price = OrderListMaker.getPrice()
         return OrderListMaker.OrderList
 
@@ -77,7 +82,7 @@ class initiator:
             for i in range(4):
                 line = info_file.readline()
                 temp = line.split(' ')
-                user_info.append(temp[2][:-1])
+                user_info.append(temp[2].rstrip('\n'))
             now_user = wh_user(user_info[0],user_info[1],user_info[2],user_info[3], user_info[4])
         else:
             user_info.append("shop")
@@ -85,7 +90,7 @@ class initiator:
             for i in range(3):
                 line = info_file.readline()
                 temp = line.split(' ')
-                user_info.append(temp[2][:-1])
+                user_info.append(temp[2].rstrip('\n'))
             now_user = sh_user(user_info[0],user_info[1],user_info[2],user_info[3])
         
         controller(now_user)
@@ -98,7 +103,7 @@ class initiator:
 # for i in range(4):
 #     line = info_file.readline()
 #     temp = line.split(' ')
-#     user_info.append(temp[2][:-1])
+#     user_info.append(temp[2].rstrip('\n'))
 # now_user = wh_user(user_info[0],user_info[1],user_info[2],user_info[3], user_info[4])
 
 # print(now_user.connected, now_user.id, now_user.mode, now_user.money, now_user.type)
