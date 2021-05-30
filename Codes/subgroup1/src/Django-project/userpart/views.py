@@ -23,7 +23,7 @@ def viewTempAccountInfo(request, tA_id):
             tA.delete()
             return render(request, 'progressSuccess.html')
         elif request.POST.get('deny'):
-            
+            tA.delete()
             return render(request, 'progressSuccess.html')
 
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
@@ -151,7 +151,7 @@ def login(request):
 
     # login accept,
     if retAuth == 'Agree':
-        return render(request, 'success.html',{'user' : A})
+        return render(request, 'success.html', {'A' : A})
     elif retAuth == 'Refuse':
         errMsg = "Wrong password"
         return render(request, 'login.html', {'errMsg' : errMsg})
