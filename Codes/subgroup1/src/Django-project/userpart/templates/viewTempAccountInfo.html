@@ -1,27 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-3">
-    <h2 class="border-bottom py-2">{{ tA.accountid }}</h2>
+    <h2 class="border-bottom py-2">회원가입승인</h2>
     <div class="card my-3">
         <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">{{ tA.accountid }}</div>
+            <div class="card-text" style="white-space: pre-line;">id : {{ tA.accountid }}</div>
+            <div class="card-text" style="white-space: pre-line;">position : {{ tA.position }}</div>
+            <div class="card-text" style="white-space: pre-line;">name : {{ tA.name }}</div>
             <div class="d-flex justify-content-end">
                 <div class="badge badge-light p-2">
-                    {{ tA.accountid }}
+            
                 </div>
             </div>
         </div>
     </div>
-    <h5 class="border-bottom my-3 py-2">{{tA.accountid}}개의 답변이 있습니다.</h5>
-    <div class="card my-3">
-        <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">{{ tA.accountid }}</div>
-            <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2">
-                    {{ tA.accountid }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <form name="test" action="{% url 'userpart:progressSuccess' %}" method="">{% csrf_token%}
+        <input type="submit" value="승인">
+
+    <h5 class="border-bottom my-3 py-2">가입거절사유란입니다.</h5>
+    <form action="{% url 'userpart:progressSuccess' %}" method="">
+        <textarea name="content" id="content" rows="5"></textarea>
+        <input type="submit" value="거절">
+        </form>
 </div>
 {% endblock %}

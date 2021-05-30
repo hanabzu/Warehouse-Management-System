@@ -10,6 +10,8 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('dosignup/', views.dosignup, name='dosignup'),
     path('logout/', views.logout, name='logout'),
-    path('<str:tA_id>/', views.viewTempAccountInfo, name= 'viewTempAccountInfo')
+    path('<str:tA_id>/', views.viewTempAccountInfo, name= 'viewTempAccountInfo'),
+    path('progressSuccess/', views.progressSuccess, name='progressSuccess'),
+
 
 ]
