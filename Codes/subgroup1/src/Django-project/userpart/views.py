@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .UserModule import *
 from .userclasses import *
+import re
 
 # Create your views here.
 def acceptUsers(request):
@@ -17,8 +18,10 @@ def viewTempAccountInfo(request, tA_id):
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
 
 def register(request):
+    errMsg = ''
     accountid = request.POST.get('accountid')
     password = request.POST.get('password')
+    password_conf = request.POST.get('password_conf')
     position = request.POST.get('position')
     name = request.POST.get('name')
     address = request.POST.get('address')
@@ -27,15 +30,31 @@ def register(request):
         A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
         UM = UserModule()
 
-        ret = UM.register(A) # true false
+    # check name
+    if re_withblank.match(name):
+        errMsg = "invalid name"
+        return render(request, 'register.html',{'errMsg' : errMsg})
 
         if ret == True:
             tA = data_TempAccountInfo(accountid = A._accountid, password = '123', position = 'admin',\
                                 name = '123', address = '123')
             tA.save()
 
+    A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
+    UM = UserModule()
+
+    ret = UM.register(A) # true false
+
+    if ret == True:
+        tA = data_TempAccountInfo(accountid = A._accountid, password = A._password, position = A._position,\
+                            name = A._name, address = A._address)
+        tA.save()
+
+    if errMsg=='':
         return render(request, 'success.html')
-    return render(request, 'register.html')
+    else:
+        return render(request, 'register.html',{'errMsg' : errMsg})
+    
 
 #success signup
 def dosignup(request):
