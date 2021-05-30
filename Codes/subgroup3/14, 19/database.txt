@@ -1,0 +1,2 @@
+warehouse 10000001 admin 0 ³ó½É ½Å¶ó¸é
+shop 10000002 warehouse 10000001 ³ó½É ½Å¶ó¸é
