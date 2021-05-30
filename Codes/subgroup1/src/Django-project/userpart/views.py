@@ -7,10 +7,11 @@ from .userclasses import *
 # Create your views here.
 def acceptUsers(request):
     tAs = data_TempAccountInfo.objects.all()
-    return render(request, 'acceptUsers.html', {'tAs' : tAs})
+    context = {'tAs' : tAs}
+    return render(request, 'acceptUsers.html', context)
 
 def viewTempAccountInfo(request):
-    tempAccount = request.POST.get(tempA.accountid)
+    tempAccount = request.POST.get('accountid')
     tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     return render(request, 'viewTempAccountInfo.html', {'tA' : tA})
 
