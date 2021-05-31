@@ -1,5 +1,5 @@
-import OrderListMaker
-import OrderList
+from . import OrderListMaker
+from . import OrderList
 import os
 class OrderSender:
     def __init__(self, order_list, receiver, user_id, user_type):

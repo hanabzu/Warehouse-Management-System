@@ -1,4 +1,4 @@
-import OrderList
+from . import OrderList
 
 class DBconnection:
     def __init__(self, result, order_list):

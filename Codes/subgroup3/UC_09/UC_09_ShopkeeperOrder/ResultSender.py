@@ -1,5 +1,5 @@
 import os
-import OrderList
+from . import OrderList
 class ResultSender:
     def __init__(self, sender_list, Result, order_number):
         self.sender_list = sender_list

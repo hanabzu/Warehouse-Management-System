@@ -1,9 +1,9 @@
-import OrderListMaker as olm
-import OrderSender as ods
-import OrderAccepter as oa
-import DBconnection as db
-import ResultSender as rs
-import MoneyChanger as mc
+from . import OrderListMaker as olm
+from . import OrderSender as ods
+from . import OrderAccepter as oa
+from . import DBconnection as db
+from . import ResultSender as rs
+from . import MoneyChanger as mc
 class sh_user:
     def __init__(self, type,id, connected,money):
         self.id = id
@@ -25,7 +25,7 @@ class controller:
         self.user = user
         self.price = 0
         self.result = None
-        
+        ### cli mode 시 ###
         if self.user.type == 'shop':
             choice = int(input("1.발주 신청  2. 발주 결과 확인 "))
 
@@ -79,7 +79,7 @@ class controller:
 
 #driver
 class initiator:
-    def __init__(self):
+    def __init__(self,user_type):
         user_type = int(input("1. 창고주 / 2. 점주 "))
         user_info = []
         if user_type == 1:
@@ -98,11 +98,13 @@ class initiator:
                 temp = line.split(' ')
                 user_info.append(temp[2].rstrip('\n'))
             now_user = sh_user(user_info[0],user_info[1],user_info[2],user_info[3])
-        
-        controller(now_user)
+        self.now_user = now_user
+        controller(self.now_user)
+    def return_controller(self):
+        return controller(self.now_user)
 
 
-initiator()
+# initiator()
 # user_info = []
 # info_file = open("창고주.txt", "r", encoding="utf8")
 # user_info.append("warehouse")

@@ -1,6 +1,6 @@
 import datetime as dt
-import OrderSender as ods
-import OrderList as ol
+from . import OrderSender as ods
+from . import OrderList as ol
 
 class OrderListMaker:
     def __init__(self, connected_wh):

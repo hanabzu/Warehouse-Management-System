@@ -65,13 +65,13 @@ class controller:
             ods.OrderSender(self.orderList, self.user.user_id).SendOrder()
             ms.MessageSender(self.orderList.order_number, self.user.user_id).RejectOrder() # Reject stub
             result, order_number = ms.ResultTaker(self.user.user_id).TakeResult()
+            # ms.MessageSender(self.orderList.order_number, self.user.user_id).AcceptOrder() # Accept stub
+            # result, order_number =ms.ResultTaker(self.user.user_id).TakeResult()
             if result == 'Error':
                 pass
             else:
                 print("<발주 신청 결과>")
                 print("{} : {}".format(order_number, result))
-                # ms.MessageSender(self.orderList.order_number, self.user.user_id).AcceptOrder() # Accept stub
-                # result, order_number =ms.ResultTaker(self.user.user_id).TakeResult()
                 if result == 'Accept': # 받은 결과가 Accept면
                     db.DBconnection(self.user.user_id).EditStock()
                 if result == 'Reject':
