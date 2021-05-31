@@ -16,7 +16,8 @@ class controller:
             self.orderdate = self.EditOrderDate()
             self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
         elif choice == 2:
-            self.orderList = om.OrderMaker()
+            self.orderList = om.OrderMaker(user.user_id).MakeOrder()
+            self.orderList.printOrderList()
 
     def createOrderDate(self):
         file = open("창고주.txt", 'r',  encoding='utf8')
@@ -66,7 +67,10 @@ class initiator:
                 user_mode = temp[-1]
             elif temp[0] == 'money':
                 user_money = temp[-1]
+            elif temp[0] == 'order_date':
+                pass
             else:
+                print(temp[0])
                 print("error! 창고주.txt파일 점검 필요!")
         return user(user_id, user_mode, user_money)
             

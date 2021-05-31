@@ -2,4 +2,3 @@ id : w20210531
 auto_mode : off
 order_date : 10 5
 money : 2000000
-
