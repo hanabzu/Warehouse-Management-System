@@ -65,7 +65,7 @@ frame_opt.pack(fill = "x", padx=5, pady=5)
 brand_lbl = Label(frame_opt, text="지점 :")
 brand_lbl.pack(side="left",padx=2, pady=5)
 
-list1 = ['서울','경기도','충청북도','충청남도','강원도','인천'];
+list1 = ['서교동','연희동','진관동','여의도동','신사동'];
  
 droplist=OptionMenu(frame_opt,c, *list1)
 droplist.config(width=15)
