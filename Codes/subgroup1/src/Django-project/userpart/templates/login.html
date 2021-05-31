@@ -17,12 +17,12 @@
     <form method = 'POST' action = "{% url 'login' %}">
         {% csrf_token %}
         <div class = "form-group">
-            ID : <input type = "text" name="accountid"></br>
+            ID </br> <input type = "text" name="accountid"></br>
         </div>
     <form method = 'POST' action = "{% url 'login' %}">
         {% csrf_token %}
         <div class = "form-group">
-            PW : <input type = "password" name="password"></br>
+            PW </br> <input type = "password" name="password"></br>
         </div>
 
         <button type="submit" class ="btn btn-primary">submit</button>

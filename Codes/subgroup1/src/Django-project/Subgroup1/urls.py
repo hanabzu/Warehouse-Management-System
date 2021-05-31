@@ -9,8 +9,10 @@ urlpatterns = [
     path('2', userpart.views.home2, name='home2'),
     path('login/',userpart.views.login, name='login'),
     path('view/',userpart.views.acceptUsers, name='acceptUsers'),
+    #path('login',userpart.views.logout, name='logout'),
+    path('<str:tA_id>/',userpart.views.logout, name='logout'),
+    #path('login',userpart.views.logout, name='logout'),
     #path('free/',userpart.views.free, name='free'),
-    #path('logout/',userpart.views.logout, name='logout'),
     #path('signup/', userpart.views.signup, name='signup'),
     #path('dosignup/', userpart.views.dosignup, name='dosignup'),
 ]
