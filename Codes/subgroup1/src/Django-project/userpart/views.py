@@ -14,8 +14,6 @@ def acceptUsers(request):
 
 def viewTempAccountInfo(request, tA_id):
     tA= get_object_or_404(data_TempAccountInfo, pk=tA_id)
-    #tempAccount = request.POST.get('accountid')
-    #tA = data_TempAccountInfo.objects.get(pk=tempAccount)
     if request.method == 'POST':
         if request.POST.get('approve'):
             A = AccountInfo.AccountInfo((tA.accountid,tA.password,False,tA.position,tA.name,tA.address,False))
@@ -167,7 +165,6 @@ def login(request):
 
 def progressSuccess(request):
     return render(request, 'success.html')
-
 
 def logout(request, A_id):
     A = data_AccountInfo.objects.get(accountid = A_id)
