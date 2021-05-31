@@ -1,0 +1,5 @@
+milk seoul 1000 1200
+orange_juice delmonte 1200 1200
+beer kloud 800 900
+snack pringles 1000 1000
+chocolate gana 700 800
