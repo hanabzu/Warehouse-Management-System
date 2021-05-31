@@ -11,7 +11,7 @@
 | 카테고리에 따른 판매 동향 데이터를 판매 동향 리포트로 만든다. | D | Trends Report Maker |
 | 판매 동향 리포트 | K | Trends Report |
 | 판매 동향 리포트를 페이지로 만든다. | D | Page Maker              |
-| 사용자에게 판매 동향 리포트를 보여줄 페이지. | K | Interface Page          |
+| 사용자에게 판매 동향 리포트를 보여줄 페이지. | K | Page Info |
 
 **2) Extracting the Associations**
 
@@ -22,13 +22,13 @@
 | Trends Data <-> Trends Report Maker | 판매 동향 데이터를 Trends Report Maker에 넘겨준다. | Convey Data |
 | Category <-> Trends Report Maker | 사용자가 선택한 카테고리를 Trends Report Maker에 넘겨준다. | Convey Data |
 | Trends Report <-> Page Maker | 판매 동향 리포트를 Page Maker에 넘겨준다. | Convey Report |
-| Page Maker <-> Interface Page | 사용자에게 보여줄 페이지를 준비한다. | Prepare |
+| Page Maker <-> Page Info | 사용자에게 보여줄 페이지를 준비한다. | Prepare |
 
 **3) Extracting the Attributes**
 
-| Concept        | Attributes               | Attribute Description                         |
-| -------------- | ------------------------ | --------------------------------------------- |
-| Trends Data    | 판매 동향 데이터         | 데이터모듈에서 가져온 판매 동향 데이터        |
-| Category       | 사용자가 선택한 카테고리 | 상품별/지역별/기간별 중 하나                  |
-| Trends Report  | 판매 동향 리포트         | 판매 동향 데이터와 카테고리로 만들어진 리포트 |
-| Interface Page | 판매 동향 리포트 페이지  | 판매 동향 리포트로 만들어진 페이지            |
+| Concept       | Attributes               | Attribute Description                         |
+| ------------- | ------------------------ | --------------------------------------------- |
+| Trends Data   | 판매 동향 데이터         | 데이터모듈에서 가져온 판매 동향 데이터        |
+| Category      | 사용자가 선택한 카테고리 | 상품별/지역별/기간별 중 하나                  |
+| Trends Report | 판매 동향 리포트         | 판매 동향 데이터와 카테고리로 만들어진 리포트 |
+| Page Info     | 판매 동향 리포트 페이지  | 판매 동향 리포트로 만들어진 페이지            |
