@@ -20,6 +20,7 @@ def viewTempAccountInfo(request, tA_id):
         if request.POST.get('approve'):
             A = AccountInfo.AccountInfo((tA.accountid,tA.password,False,tA.position,tA.name,tA.address,False))
             UM = UserModule()
+
             UM.userData(A)
             tA.delete()
             return render(request, 'progressSuccess.html')
@@ -95,7 +96,6 @@ def register(request):
 
     A = AccountInfo.AccountInfo((accountid,password,False,position,name,address,True))
     UM = UserModule()
-
     ret = UM.register(A) # true false
 
     if ret == True:
@@ -152,7 +152,7 @@ def login(request):
 
     A = AccountInfo.AccountInfo((accountid,password,False,'','','',False))
     UM = UserModule()
-
+    print(A._password)
     retAuth = UM.authenticateUser(A)
 
     # login accept,
@@ -166,7 +166,6 @@ def login(request):
         return render(request, 'login.html', {'errMsg' : errMsg})
 
 def main(request):
-    
     return render(request, 'main.html')
 
 def progressSuccess(request):
