@@ -11,8 +11,4 @@ urlpatterns = [
     path('view/',userpart.views.acceptUsers, name='acceptUsers'),
     #path('login',userpart.views.logout, name='logout'),
     path('<str:tA_id>/',userpart.views.logout, name='logout'),
-    #path('login',userpart.views.logout, name='logout'),
-    #path('free/',userpart.views.free, name='free'),
-    #path('signup/', userpart.views.signup, name='signup'),
-    #path('dosignup/', userpart.views.dosignup, name='dosignup'),
 ]
