@@ -8,7 +8,7 @@
 | 계정 정보 | K | AccountInfo |
 | 유저가 로그아웃 입력 시 현재 시간을 가져온다 | D | TimeGetter |
 | 유저 모듈과 커넥트하는 모듈 | D | UserModuleConnection |
-| 로그아웃 후 페이지를 보여준다. | D   | ViewPage |
+| 로그아웃 후 페이지를 보여준다. | D | Page Maker           |
 | 로그아웃 시의 페이지 정보 | K | PageInfo |
 
 
@@ -20,8 +20,8 @@
 | Controller  &lt;-&gt;   TimeGetter | 로그아웃 시의 time info를 가져온다. | convey request |
 | AccountInfo <-> Controller | AccountInfo를 컨트롤러에 전달한다. | convey data |
 | Controller  <->  UserModuleConnection | 컨트롤러는 AccountInfo와 time info를 UserModuleConnection으로 옮긴다. | convey data |
-| Controller <-> ViewPage | 로그아웃 페이지를 요청한다. | convey request |
-| ViewPage <-> PageInfo | 로그아웃 후 페이지를 보여준다.    | provides data |
+| Controller <->  Page Maker | 로그아웃 페이지를 요청한다. | convey request |
+| Page Maker <-> PageInfo | 로그아웃 후 페이지를 보여준다.    | provides data |
 
 **3) Extracting the Attributes**
 
