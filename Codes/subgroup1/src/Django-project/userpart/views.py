@@ -165,14 +165,9 @@ def login(request):
         errMsg = "No match ID"
         return render(request, 'login.html', {'errMsg' : errMsg})
 
-def main(request):
-    return render(request, 'main.html')
-
 def progressSuccess(request):
     return render(request, 'success.html')
 
-def free(request):
-    return render(request, 'free.html')
 
 def logout(request, A_id):
     A = data_AccountInfo.objects.get(accountid = A_id)

@@ -32,8 +32,3 @@ class data_log(models.Model):
     def __str__(self):
         return (self.account, self.time)
 
-#회원가입시 쓰는 임시 클래스
-class WebUser(models.Model):
-    user_id = models.CharField(max_length=10)
-    user_pw = models.CharField(max_length=10)
-
