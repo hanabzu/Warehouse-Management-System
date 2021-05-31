@@ -4,13 +4,13 @@ class controller:
     def __init__(self):
         self.orderdate = self.createOrderDate()
 
-
+        self.orderdate.printOD()
         choice = int(input("1. 발주 날짜 변경 2....."))
 
         if choice == 1:
             # 발주 날짜 변경 옵션 선택 시
             self.orderdate = self.EditOrderDate()
-            
+        
 
     def createOrderDate(self):
         file = open("창고주.txt", 'r',  encoding='utf8')
@@ -39,5 +39,7 @@ class controller:
         return od.OrderDate(order_date, order_n_day)
 class initiator:
     def __init__(self):
-        pass
+        controller()
+
+initiator()
 
