@@ -1,0 +1,12 @@
+shop 10000003 warehouse 10000001 20210221 beer kloud
+shop 10000004 warehouse 10000001 20210301 delmonte orange_juice
+warehouse 10000001 admin 00000000 20210313 seoul milk
+warehouse 10000001 admin 00000000 20210331 ghana chocolate
+shop 10000005 warehouse 10000002 20210406 beer kloud
+shop 10000006 warehouse 10000002 20210418 delmonte orange_juice
+warehouse 10000002 admin 00000000 20210427 seoul milk
+warehouse 10000002 admin 00000000 20210428 ghana chocolate
+warehouse 10000001 admin 00000000 20210531 seoul milk
+warehouse 10000001 admin 00000000 20210531 ghana chocolate
+shop 10000002 warehouse 10000001 20210531 beer kloud
+shop 10000002 warehouse 10000001 20210531 delmonte orange_juice

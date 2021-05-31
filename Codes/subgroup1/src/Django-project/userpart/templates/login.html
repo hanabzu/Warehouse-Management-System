@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!doctype html>
+<html lang="ko">
+ <head>
+    <title>로그인</title>
+ </head>
+ <body>
+     <h1>로그인 화면</h1>
+
+<div class="alert alert-success" role="alert">
+    {{errMsg}}
+
+</div>
+    <form method = 'POST' action = "{% url 'login' %}">
+        {% csrf_token %}
+        <div class = "form-group">
+            ID </br> <input type = "text" name="accountid"></br>
+        </div>
+    <form method = 'POST' action = "{% url 'login' %}">
+        {% csrf_token %}
+        <div class = "form-group">
+            PW </br> <input type = "password" name="password"></br>
+        </div>
+
+        <button type="submit" class ="btn btn-primary">submit</button>
+    </form>
+ </body>
+
+</html>
+
+{% endblock %}
+
+
+
+
+
+

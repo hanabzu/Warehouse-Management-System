@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{A.0}}님 환영합니다.
+
+
+    {% if A.3 == 'admin' %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <a class="navbar-brand" href="{% url 'acceptUsers' %}">회원가입 수락</a>
+
+
+    {% endif %}    
+
+</body>
+</html>
+{% endblock %}

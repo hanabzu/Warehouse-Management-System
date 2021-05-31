@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="alert alert-success" role="alert">
+        {{errMsg}}
+    <form name="test" action="" method="post">{% csrf_token%}
+        ID </br> <input type = "text" name="accountid" > </br>
+        PW </br> <input type = "password" name="password"></br>
+        PW_conf </br> <input type = "password" name="password_conf"></br>
+        position  </br><input type = "text" name= "position"></br>
+        name  </br>   <input type = "text" name= "name"></br>
+        address </br>  <input type = "text" name= "address"></br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+
+
+{% endblock %}
