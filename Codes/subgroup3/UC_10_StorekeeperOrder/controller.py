@@ -46,6 +46,9 @@ class controller:
         #     else:
         #         break
         choice = int(input("1.발주 날짜 변경 2. 발주 신청 목록 만들기."))
+        if choice == 1:
+            self.orderdate = self.EditOrderDate()
+            self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
         if user.user_mode == 'on': #자동 발주 신청 모드일때
             self.orderList = om.OrderMaker(user.user_id).MakeOrder() # 발주 리스트 생성.
             if self.isDay: #발주 날짜 n일 전이면
@@ -64,8 +67,10 @@ class controller:
             print("{} : {}".format(order_number, result))
             # ms.MessageSender(self.orderList.order_number, self.user.user_id).AcceptOrder() # Accept stub
             # result, order_number =ms.ResultTaker(self.user.user_id).TakeResult()
-        if result == 'Accept': # 받은 결과가 Accept면
-            db.DBconnection(self.user.user_id).EditStock()
+            if result == 'Accept': # 받은 결과가 Accept면
+                db.DBconnection(self.user.user_id).EditStock()
+            if result == 'Reject':
+                db.DBconnection(self.user.user_id).clear_order_list()
 
 
         
@@ -92,7 +97,7 @@ class controller:
         print(lines[0].rstrip('\n'),file = file)
         print(lines[1].rstrip('\n'), file = file)
         print("order_date : {} {}".format(order_date, order_n_day), file = file)
-        print(lines[3].rstrip('/n'), file= file)
+        print(lines[3].rstrip('\n'), file= file)
         file.close()
         return od.OrderDate(order_date, order_n_day)
 
