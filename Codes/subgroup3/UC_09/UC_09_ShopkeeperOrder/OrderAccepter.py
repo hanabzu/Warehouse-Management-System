@@ -1,4 +1,4 @@
-import OrderList
+from . import OrderList
 import os
 
 class OrderAccepter:
