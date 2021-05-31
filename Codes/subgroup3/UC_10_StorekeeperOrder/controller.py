@@ -10,6 +10,7 @@ class controller:
         self.orderdate = self.createOrderDate()
         self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
         self.orderList = None
+        self.isOrderDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).OrderDateCheck()
         while True:
             choice = int(input("1. 발주 날짜 변경 2.자동 발주 테스트 3.showList 테스트 4.수동 발주 테스트 5.EditOrder Test"))
 
