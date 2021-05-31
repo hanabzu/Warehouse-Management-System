@@ -169,8 +169,8 @@ def progressSuccess(request):
     return render(request, 'success.html')
 
 
-def logout(request, tA_id):
-    A = data_AccountInfo.objects.get(accountid = tA_id)
+def logout(request, A_id):
+    A = data_AccountInfo.objects.get(accountid = A_id)
     log = data_log(account = A, time = datetime.now(), cond = 'Logout')
     log.save()
     return render(request, 'login.html')
