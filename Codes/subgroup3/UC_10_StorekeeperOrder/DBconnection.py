@@ -1,8 +1,8 @@
 import os
 
 class DBconnection:
-    def __init__(self):
-        pass
+    def __init__(self, user_id):
+        self.user_id = user_id
 
     def EditStock(self):
         item_name = []
@@ -22,11 +22,6 @@ class DBconnection:
             item_price.append(int(temp[2]))
             item_number.append(int(temp[3]))
         file.close()
-        # 받아 왔으면 읽은 파일은 삭제. 
-        if os.path.isfile(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]):
-                os.remove(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0])
-        else:
-            print("{} is not exist".format(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]))
         # stock_list(Db) update
         # stock_list 정보 가져오기.
         stock_name_brand, stock_item_price, stock_item_number = self.stock_check()
@@ -42,6 +37,11 @@ class DBconnection:
         for i in range(len(stock_name_brand)):
             print("{} {} {} {}".format(stock_name_brand[i][0],stock_name_brand[i][1], stock_item_price[i], stock_item_number[i]), file= file)
         file.close()
+        # 발주 신청 성공했으면 읽은 파일은 삭제. 
+        if os.path.isfile(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]):
+                os.remove(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0])
+        else:
+            print("{} is not exist".format(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]))
             
 
     def stock_check(self):

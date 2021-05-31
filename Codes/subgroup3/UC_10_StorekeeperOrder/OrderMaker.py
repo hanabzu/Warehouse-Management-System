@@ -22,6 +22,7 @@ class OrderMaker:
 
         # 주문 수량 파익 및 발주 목록 생성
         for i in range(len(pred_name_brand)):
+            print('test')
             if stock_name_brand.count(pred_name_brand[i]) == 0: # 예측 판매량 상품이 재고에 존재하지 않을 때 - 예측 판매량 그대로 주문 목록에 추가.
                 if product_name_brand.count(pred_name_brand[i]) != 0: # 구매 가능한 생산품이면.
                     order_item_name.append(pred_name_brand[i][0])
@@ -33,10 +34,13 @@ class OrderMaker:
                 if product_name_brand.count(pred_name_brand[i]) != 0: #구매 가능한 생산품이면.
                     stock_index = stock_name_brand.index(pred_name_brand[i]) # 해당 상품 인덱스 찾고
                     order_Quantity = pred_item_number[i] - stock_item_number[stock_index] # 주문 수량은 (예측량 - 재고량)
-                    order_item_name.append(pred_name_brand[i][0])
-                    order_item_brand.append(pred_name_brand[i][1])
-                    order_item_price.append(stock_item_price[stock_index]) # 가격은 재고목록에 있는 것을 사용
-                    order_item_number.append(order_Quantity)
+                    if order_Quantity <= 0: # 신청량이 0이하면 추가 x
+                        pass
+                    else:
+                        order_item_name.append(pred_name_brand[i][0])
+                        order_item_brand.append(pred_name_brand[i][1])
+                        order_item_price.append(stock_item_price[stock_index]) # 가격은 재고목록에 있는 것을 사용
+                        order_item_number.append(order_Quantity)
 
         return OrderList.OrderList(order_item_name, order_item_brand, order_item_price, order_item_number, order_number) #OrderList객체로 반환
 

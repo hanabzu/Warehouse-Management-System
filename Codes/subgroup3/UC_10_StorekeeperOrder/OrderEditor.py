@@ -8,6 +8,10 @@ class OrderEditor:
             pass
         else:
             self.EditOrder()
+    
+    def getOrderList(self):
+        return self.order_list
+        
     def EditOrder(self):
         # 구매 가능한 생산품 확인   
         order_name_brand = []
@@ -23,7 +27,6 @@ class OrderEditor:
             print("if you choose all item type 'stop'")
             choice = input("Choose item. (name brand number) : ")
             if choice == 'stop':
-                print("test!!!!!!!!!!!!!!!!!!!!!!")
                 break
             temp = choice.split(' ')
             if self.check_product(temp[0], temp[1],product_name_brand): # 입력한 품목이 신청가능한 품목인지 확인하고

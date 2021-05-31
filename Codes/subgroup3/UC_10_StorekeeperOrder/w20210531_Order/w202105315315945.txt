@@ -1,6 +1,0 @@
-Reject
-milk seoul 1000 400
-orange_juice delmonte 1200 500
-beer kloud 800 300
-snack pringles 1000 300
-chocolate gana 700 200
