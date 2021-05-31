@@ -8,7 +8,7 @@ Home 페이지에서 회원가입을 클릭하면 실행
 
 1) 여백 입력 -> 에러메시지 출력 (You have to fill all blanks) -> OK
 
-2) 입력한 아이디가 5글자 미만 -> 에러메세지 출력 (ID is too short (least : 5)) -> OK
+2) 입력한 아이디가 5글자 미만   -> 에러메세지 출력 (ID is too short (least : 5)) -> OK
 
 3) 입력한 아이디에 알파벳, 숫자 외의 문자 포함 -> 에러메세지 출력 (invalid ID) -> OK
 
