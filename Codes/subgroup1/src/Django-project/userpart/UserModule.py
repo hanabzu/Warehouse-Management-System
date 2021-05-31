@@ -4,16 +4,24 @@ from .userclasses import *
 
 class UserModule:
     def encrypt(self,accountInfo):
+        key = 60
         eA = accountInfo
-        
-        # encryption of Id, password
+        s_password = ''
 
+        for i in range(len(eA._password)):
+            c = eA._password[i]
+            s_password += chr((ord(c) + key -33) % 94 + 33)
+        eA._password = s_password
         return eA
 
     def decrypt(self,eA):
+        key = 60
         A = eA
-
-        # decryption of Id, password
+        s_password = ''
+        for i in range(len(A._password)):
+            c = A._password[i]
+            s_password += chr((ord(c) - key -33) % 94 + 33)
+        A._password = s_password
 
         return A
 
