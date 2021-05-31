@@ -12,7 +12,7 @@ class MoneyChecker:
         for line in lines:
             temp = line.rstrip('\n').split(' ')
             if temp[0] == 'money':
-                user_money = temp[-1]
+                user_money = int(temp[-1])
             else:
                 pass
 
