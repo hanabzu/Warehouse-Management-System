@@ -7,7 +7,6 @@ class UserModule:
         key = 60
         eA = accountInfo
         s_password = ''
-
         for i in range(len(eA._password)):
             c = eA._password[i]
             s_password += chr((ord(c) + key -33) % 94 + 33)
@@ -22,7 +21,6 @@ class UserModule:
             c = A._password[i]
             s_password += chr((ord(c) - key -33) % 94 + 33)
         A._password = s_password
-
         return A
 
     def userData(self, accountInfo):
