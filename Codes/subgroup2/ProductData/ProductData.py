@@ -15,7 +15,6 @@ cur.execute("INSERT INTO Product VALUES ('새우깡', '농심')")
 
 
 
-
 class ProductData(Frame):
     
     def __init__(self, master):
@@ -40,7 +39,7 @@ class ProductData(Frame):
         def delete():
             name = Entry.get(entryname)
             brand = Entry.get(entrybrand)
-            cur.execute("DELETE FROM Product WHERE name = ? AND brand = ?", (str(name),str(brand)))
+            cur.execute("DELETE FROM Product WHERE name = ? OR brand = ?", (str(name),str(brand)))
             con.commit()
 
         # 제품명
