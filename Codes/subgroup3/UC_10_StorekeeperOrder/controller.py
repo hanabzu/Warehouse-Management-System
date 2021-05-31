@@ -1,15 +1,18 @@
 import OrderDate as od
+import DateCounter as dc
+
 
 class controller:
     def __init__(self):
         self.orderdate = self.createOrderDate()
+        self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
 
-        self.orderdate.printOD()
         choice = int(input("1. 발주 날짜 변경 2....."))
 
         if choice == 1:
             # 발주 날짜 변경 옵션 선택 시
             self.orderdate = self.EditOrderDate()
+            self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
         
 
     def createOrderDate(self):
