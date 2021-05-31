@@ -1,5 +1,5 @@
 import OrderList
-
+import showList
 class OrderEditor:
     def __init__(self, order_list):
         self.order_list = order_list # 자동 모드 off일때는 None으로 들어와서 직접 만들 수 있도록.
@@ -11,7 +11,7 @@ class OrderEditor:
     
     def getOrderList(self):
         return self.order_list
-        
+
     def EditOrder(self):
         # 구매 가능한 생산품 확인   
         order_name_brand = []
@@ -21,7 +21,7 @@ class OrderEditor:
         product_name_brand, product_item_price = self.production_check()
         while True:
             print("현재 신청 발주 목록 : ")
-            self.order_list.printOrderList()
+            showList.showList(self.order_list)
             print("신청 가능한 생산품 목록 : ")
             self.view_productList(product_name_brand, product_item_price)
             print("if you choose all item type 'stop'")

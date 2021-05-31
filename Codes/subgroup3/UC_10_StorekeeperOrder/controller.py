@@ -45,7 +45,28 @@ class controller:
         #             db.DBconnection(self.user.user_id).EditStock()
         #     else:
         #         break
-        
+        choice = int(input("1.발주 날짜 변경 2. 발주 신청 목록 만들기."))
+        if user.user_mode == 'on': #자동 발주 신청 모드일때
+            self.orderList = om.OrderMaker(user.user_id).MakeOrder() # 발주 리스트 생성.
+            if self.isDay: #발주 날짜 n일 전이면
+                self.orderList = oe.OrderEditor(self.orderList).getOrderList()
+            else:
+                pass
+        else:
+            if choice == 2:
+                self.orderList = om.OrderMaker(user.user_id).Passive_MakeOrder()
+
+        if self.isOrderDay:# 발주 날짜면
+            ods.OrderSender(self.orderList, self.user.user_id).SendOrder()
+            ms.MessageSender(self.orderList.order_number, self.user.user_id).RejectOrder() # Reject stub
+            result, order_number = ms.ResultTaker(self.user.user_id).TakeResult()
+            print("<발주 신청 결과>")
+            print("{} : {}".format(order_number, result))
+            # ms.MessageSender(self.orderList.order_number, self.user.user_id).AcceptOrder() # Accept stub
+            # result, order_number =ms.ResultTaker(self.user.user_id).TakeResult()
+        if result == 'Accept': # 받은 결과가 Accept면
+            db.DBconnection(self.user.user_id).EditStock()
+
 
         
 
