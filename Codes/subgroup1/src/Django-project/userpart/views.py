@@ -182,11 +182,7 @@ def logout(request, accountid):
     return render(request, 'login.html')
 
 def home(request):
-    UC = UserModule()
-    print(UC)
     return render(request, 'home.html')
 
 def home2(request):
-    UC = UserModule()
-    print(UC)
     return render(request, 'home2.html')
