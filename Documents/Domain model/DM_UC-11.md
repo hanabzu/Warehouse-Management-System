@@ -10,7 +10,7 @@
 | 점주가 컴플레인을 신청한다. | D | Request Complaint |
 | 점주가 신청한 컴플레인을 데이터 베이스에 추가한다. | D | Add Complaints |
 | 변동된 컴플레인을 페이지로 만든다. | D | Page Maker |
-| 사용자에게 변동된 컴플레인을 보여줄 페이지. | K | Interface Page |
+| 사용자에게 변동된 컴플레인을 보여줄 페이지. | K | Page Info           |
 
 **2) Extracting the Associations**
 
@@ -24,10 +24,10 @@
 | Request Complaint <-> Add Complaints | 점주가 신청한 컴플레인을 넘겨준다. | Convey Complaint |
 | Process Complaint  <-> Page Maker | 처리된 컴플레인을 페이지 메이커에 넘겨준다. | Convey Complaint |
 | Request Complaint <-> Page Maker | 신청한 컴플레인을 페이지 메이커에 넘겨준다. | Convey Complaint |
-| Page Maker <-> Interface Page | 사용자에게 보여줄 페이지를 준비한다. | Prepare |
+| Page Maker <-> Page Info | 사용자에게 보여줄 페이지를 준비한다. | Prepare |
 
 **3) Extracting the Attributes**
 
 | Concept | Attributes | Attribute Description |
 | ------- | ---------- | --------------------- |
-| Interface Page | 변동된 컴플레인 데이터 페이지 | 창고관리자/점주가 수정한 컴플레인 페이지 |
+| Page Info | 변동된 컴플레인 데이터 페이지 | 창고관리자/점주가 수정한 컴플레인 페이지 |
