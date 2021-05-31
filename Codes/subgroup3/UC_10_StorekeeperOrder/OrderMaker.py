@@ -40,8 +40,43 @@ class OrderMaker:
 
         return OrderList.OrderList(order_item_name, order_item_brand, order_item_price, order_item_number, order_number) #OrderList객체로 반환
 
+    def Passive_MakeOrder(self):
+        temp_name = []
+        temp_brand = []
+        temp_price = []
+        temp_number = []
+        # 구매 가능한 생산품 확인        
+        product_name_brand, product_item_price = self.production_check()
+        while True:
+            self.view_productList(product_name_brand, product_item_price)
+            print("if you choose all item type 'stop'")
+            choice = input("Choose item. (name brand number) : ")
+            if choice == "stop":
+                break
+            temp = choice.split(' ')
+            if self.check_product(temp[0], temp[1],product_name_brand):
+                temp_name.append(temp[0])
+                temp_brand.append(temp[1])
+                temp_price.append(self.check_price(temp[0],temp[1],product_name_brand, product_item_price))
+                temp_number.append((int)(temp[2]))
+            else:
+                print("invalid input : Out of stock!")
 
-            
+        return OrderList.OrderList(temp_name,temp_brand, temp_price, temp_number, self.OrderNumberMaker())
+
+    def view_productList(self, product_name_brand, product_item_price):
+        for i in range(len(product_name_brand)):
+            print(product_name_brand, product_item_price)
+
+    def check_product(self, name, brand,product_name_brand):
+        if product_name_brand.count((name,brand)) != 0:
+            return True
+        return False # 해당 생산품 없음
+
+    def check_price(self, name, brand,product_name_brand, product_item_price):
+        if product_name_brand.count((name,brand)) != 0:
+            return product_item_price[product_name_brand.index((name,brand))]
+        return 0 # 해당 상품 없을 때           
 
 
     def stock_check(self):
