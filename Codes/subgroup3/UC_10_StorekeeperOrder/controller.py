@@ -10,7 +10,7 @@ class controller:
         self.isDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).DateCheck()
         self.orderList = None
         while True:
-            choice = int(input("1. 발주 날짜 변경 2.자동 발주 테스트 3.showList 테스트"))
+            choice = int(input("1. 발주 날짜 변경 2.자동 발주 테스트 3.showList 테스트 4.수동 발주 테스트"))
 
             if choice == 1:
                 # 발주 날짜 변경 옵션 선택 시
@@ -21,6 +21,9 @@ class controller:
                 self.orderList.printOrderList()
             elif choice == 3:
                 showList.showList(self.orderList)
+            elif choice == 4:
+                self.orderList = om.OrderMaker(user.user_id).Passive_MakeOrder()
+                self.orderList.printOrderList()
             else:
                 break
         
