@@ -22,7 +22,6 @@ class OrderMaker:
 
         # 주문 수량 파익 및 발주 목록 생성
         for i in range(len(pred_name_brand)):
-            print('test')
             if stock_name_brand.count(pred_name_brand[i]) == 0: # 예측 판매량 상품이 재고에 존재하지 않을 때 - 예측 판매량 그대로 주문 목록에 추가.
                 if product_name_brand.count(pred_name_brand[i]) != 0: # 구매 가능한 생산품이면.
                     order_item_name.append(pred_name_brand[i][0])

@@ -43,6 +43,12 @@ class DBconnection:
         else:
             print("{} is not exist".format(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]))
             
+    def clear_order_list(self):
+        order_file = os.listdir(os.getcwd() + '\\' + self.user_id + "_Order") 
+        if os.path.isfile(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]):
+                os.remove(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0])
+        else:
+            print("{} is not exist".format(os.getcwd() + '\\' + self.user_id + "_Order\\" + order_file[0]))
 
     def stock_check(self):
         # 재고 상황 확인
