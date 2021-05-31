@@ -1,4 +1,4 @@
 id : w20210531
-auto_mode : off
+auto_mode : on
 order_date : 31 3
-money : 2000000
+money : 20000000
