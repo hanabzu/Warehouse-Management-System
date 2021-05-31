@@ -1,0 +1,26 @@
+{% extends 'base3.html' %}
+{% block content %}
+<div class="container my-3">
+    <h2 class="border-bottom py-2">회원가입 승인</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">id : {{ tA.accountid }}</div>
+            <div class="card-text" style="white-space: pre-line;">position : {{ tA.position }}</div>
+            <div class="card-text" style="white-space: pre-line;">name : {{ tA.name }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="badge badge-light p-2">
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="test" action="" method="POST">{% csrf_token%}
+        <input type="submit" name ="approve" value="approve">
+
+    <h5 class="border-bottom my-3 py-2">가입거절사유란입니다.</h5>
+    <form action="{% url 'userpart:progressSuccess' %}" method="POST">
+        <textarea name="content" id="content" rows="5"></textarea>
+        <input type="submit" name = "deny" value="deny">
+        </form>
+</div>
+{% endblock %}
