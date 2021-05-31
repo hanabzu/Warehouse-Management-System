@@ -6,11 +6,9 @@
 | ------------------------------------------------------------ | ---- | ------------ |
 | 유저가 계정정보 수정 버튼을 클릭한다.  | D    | Controller   |
 | 시스템이 패스워드 재입력을 요청한다.       |  K |  re-input |
-| 유저가 패스워드를 입력한다.  | D    | DatabaseConnection  |
-| 시스템은 유저 모듈에 계정의 아이디와 유저가 입력한 패스워드를 전달한다. | D | DatabaseConnection |
+| 유저가 패스워드를 입력한다. 시스템은 유저 모듈에 계정의 아이디와 유저가 입력한 패스워드를 전달한다. 유저가 계정 정보를 수정한다. | D | Database Connection |
 | 시스템이 유저에게 계정 정보를 수정할 수 있는 창을 띄운다. | K  | Interface |
-| 유저가 계정 정보를 수정한다. | D  | DatabaseConnection   |
-| 시스템이 새로운 계정 정보를 유저 모듈에 알린다. | D  | 유저모듈  |
+| 시스템이 새로운 계정 정보를 유저 모듈에 알린다. | D  | User module |
 | 시스템이 유저에게 계정 정보가 변경되었음을 알린다. | K | info  |
 
 
@@ -19,9 +17,9 @@
 
 | Concept pair | Association Description | Association Name |
 | ------------------ | ----------------------- | ---------------- |
-| DatabaseConnection  <->   유저 모듈 |  유저 계정 정보가 변경되었음을 알린다.   | convey request |
-| Controller  <->  DatabaseConnection  |  유저 계정 정보 수정을 요청한다.  | convey request |
-| Controller  <->  유저 모듈  |  패스워드 재입력을 요청한다.  | convey request |
+| Database Connection  <->   User module |  유저 계정 정보가 변경되었음을 알린다.   | convey request |
+| Controller  <->  Database Connection |  유저 계정 정보 수정을 요청한다.  | convey request |
+| Controller  <->  User Module |  패스워드 재입력을 요청한다.  | convey request |
 
 **3) Extracting the Attributes**
 
