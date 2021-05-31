@@ -19,6 +19,8 @@
 | Controller  <->  DatabaseConnection  |  데이터 베이스의 계정들을 요청한다.  | request data |
 | Controller  <->  CompareAccount | AccountInfo와 데이터베이스의 계정들을 비교한다. | compare data |
 | CompareAccount <-> CompareResult | 비교한 결과를 CompareResult에 저장한다 | update data |
+| AccountInfo <-> Controller | 비교하려는 AccountInfo를 전달한다. | provide data |
+| CompareResult <-> Controller | 비교한 결과를 Controller에 전달한다 | provide data |
 
 **3) Extracting the Attributes**
 
