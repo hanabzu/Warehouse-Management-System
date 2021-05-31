@@ -1,0 +1,4 @@
+id : w20210527
+connected_s : s20210527
+money : 2000000
+Auto_order_mode : on

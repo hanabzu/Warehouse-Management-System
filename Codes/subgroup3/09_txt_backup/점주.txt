@@ -1,0 +1,3 @@
+id : s20210527
+connected_wh : w20210527
+money : 2000000
