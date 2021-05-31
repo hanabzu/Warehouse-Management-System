@@ -8,7 +8,7 @@ class OrderEditor:
             pass
         else:
             self.EditOrder()
-    def EditOrder(self): # 자동모드 on일때
+    def EditOrder(self):
         # 구매 가능한 생산품 확인   
         order_name_brand = []
         for i in range(len(self.order_list.item_name)): # name, brand로 아이템을 구분 하므로 찾기 편하게 묶어서 list만들기.
@@ -22,7 +22,8 @@ class OrderEditor:
             self.view_productList(product_name_brand, product_item_price)
             print("if you choose all item type 'stop'")
             choice = input("Choose item. (name brand number) : ")
-            if choice == "stop":
+            if choice == 'stop':
+                print("test!!!!!!!!!!!!!!!!!!!!!!")
                 break
             temp = choice.split(' ')
             if self.check_product(temp[0], temp[1],product_name_brand): # 입력한 품목이 신청가능한 품목인지 확인하고
@@ -34,7 +35,7 @@ class OrderEditor:
                     self.order_list.item_number.append(int(temp[2]))
                 else: # 신청 발주목록에 입력한 품목이 있을 때
                     temp_index= order_name_brand.index((temp[0],temp[1])) # 발주목록의 인덱스를 찾아서
-                    self.order_list.item_number[i] = int(temp[2]) # 수정한 개수 반영.
+                    self.order_list.item_number[temp_index] = int(temp[2]) # 수정한 개수 반영.
 
             else:
                 print("invalid input : No product!")
@@ -63,7 +64,8 @@ class OrderEditor:
         return production_name_brand, production_item_price 
 
     def view_productList(self, product_name_brand, product_item_price):
-        for i in range(len(product_name_brand)):
+        print("{:<20}|{:<20}|{:<20}".format("product_name","product_brand", "product_price"))
+        for i in range(len(product_name_brand)):            
             print("{:<20}|{:<20}|{:<20}".format(product_name_brand[i][0],product_name_brand[i][1], product_item_price[i]))
 
     def check_product(self, name, brand,product_name_brand):

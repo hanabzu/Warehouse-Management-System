@@ -65,7 +65,8 @@ class OrderMaker:
         return OrderList.OrderList(temp_name,temp_brand, temp_price, temp_number, self.OrderNumberMaker())
 
     def view_productList(self, product_name_brand, product_item_price):
-        for i in range(len(product_name_brand)):
+        print("{:<20}|{:<20}|{:<20}".format("product_name","product_brand", "product_price"))
+        for i in range(len(product_name_brand)):            
             print("{:<20}|{:<20}|{:<20}".format(product_name_brand[i][0],product_name_brand[i][1], product_item_price[i]))
 
     def check_product(self, name, brand,product_name_brand):
