@@ -31,7 +31,7 @@ class controller:
                 self.orderList = oe.OrderEditor(self.orderList)
                 self.orderList.printOrderList()
             elif choice == 6:
-                ods.OrderSender(self.orderList).SendOrder()
+                ods.OrderSender(self.orderList, self.user.user_id).SendOrder()
             else:
                 break
         
