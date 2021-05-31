@@ -2,8 +2,9 @@
 
 import os
 class MessageSender:
-    def __init__(self, order_num):
+    def __init__(self, order_num, user_id):
         self.order_num = order_num
+        self.user_id = user_id
 
     def AcceptOrder(self):
         if os.path.isdir(os.getcwd() + '\\' + self.user_id + "_Order") == False:
@@ -28,6 +29,10 @@ class MessageSender:
             print(line.rstrip('\n'), file= file)
         file.close()
 
+class ResultTaker:
+    def __init__(self, user_id):
+        self.user_id = user_id
+        
     def TakeResult(self):
         if os.path.isdir(os.getcwd() + '\\' + self.user_id + "_Order") == False:
             print("주문 신청한 목록이 없습니다.")

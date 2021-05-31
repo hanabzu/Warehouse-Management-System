@@ -3,6 +3,7 @@ import DateCounter as dc
 import OrderMaker as om
 import OrderEditor as oe
 import OrderSender as ods
+import MessageSender as ms
 import OrderList
 import showList
 class controller:
@@ -13,7 +14,7 @@ class controller:
         self.orderList = None
         self.isOrderDay = dc.Datecounter(self.orderdate.date, self.orderdate.n_day).OrderDateCheck()
         while True:
-            choice = int(input("1. 발주 날짜 변경 2.자동 발주 테스트 3.showList 테스트 4.수동 발주 테스트 5.EditOrder Test, 6.SendOrder Test"))
+            choice = int(input("1. 발주 날짜 변경 2.자동 발주 테스트 3.showList 테스트 4.수동 발주 테스트 5.EditOrder Test, 6.SendOrder Test 7.Take Result Test"))
 
             if choice == 1:
                 # 발주 날짜 변경 옵션 선택 시
@@ -32,6 +33,11 @@ class controller:
                 self.orderList.printOrderList()
             elif choice == 6:
                 ods.OrderSender(self.orderList, self.user.user_id).SendOrder()
+            elif choice == 7:
+                ms.MessageSender(self.orderList.order_number, self.user.user_id).AcceptOrder()
+                print(ms.ResultTaker(self.user.user_id).TakeResult())
+                ms.MessageSender(self.orderList.order_number, self.user.user_id).RejectOrder()
+                print(ms.ResultTaker(self.user.user_id).TakeResult())
             else:
                 break
         
