@@ -22,7 +22,7 @@
     <form method = 'POST' action = "{% url 'login' %}">
         {% csrf_token %}
         <div class = "form-group">
-            PW : <input type = "text" name="password"></br>
+            PW : <input type = "password" name="password"></br>
         </div>
 
         <button type="submit" class ="btn btn-primary">submit</button>
