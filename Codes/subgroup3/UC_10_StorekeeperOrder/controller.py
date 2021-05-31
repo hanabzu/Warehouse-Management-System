@@ -2,7 +2,7 @@ import OrderDate as od
 import DateCounter as dc
 import OrderMaker as om
 import OrderList
-
+import showList
 class controller:
     def __init__(self, user):
         self.user = user
@@ -18,6 +18,9 @@ class controller:
         elif choice == 2:
             self.orderList = om.OrderMaker(user.user_id).MakeOrder()
             self.orderList.printOrderList()
+        elif choice == 3:
+            showList.showList(self.orderList)
+        
 
     def createOrderDate(self):
         file = open("창고주.txt", 'r',  encoding='utf8')
